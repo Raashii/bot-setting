@@ -5,7 +5,7 @@ PINKY V2
 */
 
 const {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
-const Sophia = require('../events');
+const Rashi  = require('../events');
 const Config = require('../config');
 
 const Language = require('../language');
@@ -22,7 +22,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     return sonuc.includes(true);
 }
 
-Sophia.tosophia({pattern: 'ban ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
+Rashi.tozara({pattern: 'ban ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -60,7 +60,7 @@ Sophia.tosophia({pattern: 'ban ?(.*)', fromMe: true, dontAddCommandList: true, o
     }
 }));
 
-Sophia.tosophia({pattern: 'add(?: |$)(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.ADD_DESC}, (async (message, match) => {  
+Rashi.tozara({pattern: 'add(?: |$)(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.ADD_DESC}, (async (message, match) => {  
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -94,7 +94,7 @@ Sophia.tosophia({pattern: 'add(?: |$)(.*)', fromMe: true, dontAddCommandList: tr
     }
 }));
 
-Sophia.tosophia({pattern: 'promote ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.PROMOTE_DESC}, (async (message, match) => {    
+Rashi.tozara({pattern: 'promote ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.PROMOTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -152,7 +152,7 @@ Sophia.tosophia({pattern: 'promote ?(.*)', fromMe: true, dontAddCommandList: tru
     }
 }));
 
-Sophia.tosophia({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.DEMOTE_DESC, dontAddCommandList: true}, (async (message, match) => {    
+Rashi.tozara({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.DEMOTE_DESC, dontAddCommandList: true}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN);
 
@@ -182,7 +182,7 @@ Sophia.tosophia({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, desc: L
     }
 }));
 
-Sophia.tosophia({pattern: 'mute ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
+Rashi.tozara({pattern: 'mute ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -1538,7 +1538,7 @@ Sophia.tosophia({pattern: 'mute ?(.*)', fromMe: true, dontAddCommandList: true, 
     }
 }));
 
-Sophia.tosophia({pattern: 'unmute ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
+Rashi.tozara({pattern: 'unmute ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -1552,14 +1552,14 @@ Sophia.tosophia({pattern: 'unmute ?(.*)', fromMe: true, dontAddCommandList: true
     }
 }));
 
-Sophia.tosophia({pattern: 'invite ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.INVITE_DESC}, (async (message, match) => {    
+Rashi.tozara({pattern: 'invite ?(.*)', fromMe: true, dontAddCommandList: true, onlyGroup: true, desc: Lang.INVITE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN, MessageType.text);
     var invite = await message.client.groupInviteCode(message.jid);
     await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
-Sophia.tosophia({pattern: 'rename ?(.*)', onlyGroup: true, fromMe: true,desc: 'change group name'}, (async (message, match) => {
+Rashi.tozara({pattern: 'rename ?(.*)', onlyGroup: true, fromMe: true,desc: 'change group name'}, (async (message, match) => {
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,'i am not admin',MessageType.text);
     if (match[1] === '') return await message.client.sendMessage(message.jid,'give a name for you group \n exampple- .rename pinky',MessageType.text);
