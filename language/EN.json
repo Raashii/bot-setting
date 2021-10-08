@@ -9,7 +9,7 @@
             "DESC": "Description",
             "EXAMPLE": "Example",
             "NOT_FOUND": "*I couldnt find a command like this*",
-            "PLKADMIN": ".report you are not admin \n\n 🇩​🇴​🇳​🇹​ 🇹​🇷​🇾​ 🇦​🇬​🇦​🇮​🇳​, 🇮​🇫​ 🇾​🇴​🇺​ 🇹​🇷​🇾​ 🇾​🇴​🇺​ 🇼​🇮​🇱​🇱​ 🇧​🇪​ 🇷​🇪​🇲​🇴​🇻​🇪​🇩​ 🇧​🇾​ 🇦​🇩​🇲​🇮​🇳​🇸​",
+            "PLKADMIN": ".report you are not admin \n*ᴅᴏɴᴛ ᴛʀʏ ᴀɢᴀɪɴ ʙʀᴏɪ*​",
             "WARN": "Warn"
         },
         "_plugin": {
@@ -38,7 +38,7 @@
             "ALREADY_PROMOTED": "ʜᴇ ɪꜱ ᴀʟʀᴇᴀᴅʏ ᴀᴅᴍɪɴ ᴏᴏᴘᴢ",
             "PROMOTED": ", ᴄᴏɴɢʀᴀᴛᴢ ʏᴏᴜ ᴀʀᴇ ᴘʀᴏᴍᴏᴛᴇᴅ",
             "PROMOTE_DESC": "Makes any person an admin.",
-            "PLKADMIN": ".report you are not admin \n\n 🇩​🇴​🇳​🇹​ 🇹​🇷​🇾​ 🇦​🇬​🇦​🇮​🇳​, 🇮​🇫​ 🇾​🇴​🇺​ 🇹​🇷​🇾​ 🇾​🇴​🇺​ 🇼​🇮​🇱​🇱​ 🇧​🇪​ 🇷​🇪​🇲​🇴​🇻​🇪​🇩​ 🇧​🇾​ 🇦​🇩​🇲​🇮​🇳​🇸​",
+            "PLKADMIN": ".report you are not admin \n*ᴅᴏɴᴛ ᴛʀʏ ᴀɢᴀɪɴ ʙʀᴏɪ*​",
             "DEMOTE_DESC": "Takes the authority of any admin.",
             "ALREADY_NOT_ADMIN": "```How can I make someone admin who is already admin?```",
             "DEMOTED": "```, has been demoted!```",
@@ -77,9 +77,9 @@
             "MUST_TEXT": "```Please reply to any message```"
         },
         "heroku": {
-            "RESTART_DESC": "Restart pinky",
-            "RESTART_MSG": "ʀᴇꜱᴛᴀʀᴛɪɴɢ ᴘɪɴᴋʏ",
-            "SHUTDOWN_DESC": "Shutdown pinky",
+            "RESTART_DESC": "Restart Zara",
+            "RESTART_MSG": "ʀᴇsᴛᴀʀᴛɪɴɢ♻️",
+            "SHUTDOWN_DESC": "Shutdown zara",
             "SHUTDOWN_MSG": "```Shutting down ⛔```",
             "DYNO_DESC": "Check heroku dyno usage",
             "DYNO_TOTAL": "```Total Quota```",
@@ -123,7 +123,7 @@
             "WELCOME_DELETED": "*✅ Welcome message has been deleted successfully!*",
             "WELCOME_SETTED": "*✅ Welcome message has been set successfully!*",
             "GOODBYE_DESC": "Sets the goodbye message. If you leave blank, it show's the goodbye message.",
-            "PLKADMIN": ".report you are not admin \n\n 🇩​🇴​🇳​🇹​ 🇹​🇷​🇾​ 🇦​🇬​🇦​🇮​🇳​, 🇮​🇫​ 🇾​🇴​🇺​ 🇹​🇷​🇾​ 🇾​🇴​🇺​ 🇼​🇮​🇱​🇱​ 🇧​🇪​ 🇷​🇪​🇲​🇴​🇻​🇪​🇩​ 🇧​🇾​ 🇦​🇩​🇲​🇮​🇳​🇸​",
+            "PLKADMIN": ".report you are not admin \n*ᴅᴏɴᴛ ᴛʀʏ ᴀɢᴀɪɴ ʙʀᴏɪ*​",
             "NOT_SET_GOODBYE": "*You didn't set a goodbye message!*\n*To set:* ```.goodbye bye && bye#see ya```",
             "GOODBYE_ALREADY_SETTED": "*✅ Goodbye message has been set!*\n*Message:* ```",
             "NEED_GOODBYE_TEXT": "*You must write a message to set up the goodbye message.*\n*Example:* ```.goodbye bye && bye#see ya```",
@@ -173,7 +173,7 @@
             "REMOVEBG_DESC": "Removes the background of the photos.",
             "NEED_PHOTO": "*Give me a photo!*",
             "NO_API_KEY": "*You don't have an API key!*\nYou can get it here: remove.bg.",
-            "RBGING": "```ʀᴇᴍᴏᴠɪɴɢ ʙᴀᴄᴋɢʀᴏᴜɴᴅ```"
+            "RBGING": "*ʀᴇᴍᴏᴠɪɴɢ🔛*"
         },
         "scrapers": {
             "TRANSLATE_DESC": "It translates with Google Translate. You must reply any message.",
@@ -237,14 +237,13 @@
         },
         "updater": {
             "UPDATER_DESC": "Checks the update for pinky.",
-            "UPDATE": "ʏᴏᴜʀ ᴘɪɴᴋʏ ɪꜱ ᴄᴏᴍᴘʟᴇᴛᴇʟʏ ᴜᴘ-ᴛᴏ-ᴅᴀᴛᴇ",
-            "NEW_UPDATE": "*New update available for Sophia!*\n\n ```use .list for commands``` \n\n *ask support group before updating or your bot might stop working* \n\n https://chat.whatsapp.com/JKGzUU3ItysHk33ZVLt2NC \n\n *-if bot stop working you will have to re-deploy* \n\n Updates are:\n\n ",
-            "UPDATE_NOW_DESC": "It makes updates.",
-            "UPDATING": "ᴘɪɴᴋʏ ᴜᴘᴅᴀᴛɪɴɢ...",
+            "UPDATE": "*ʏᴏᴜʀ ᴢᴀʀᴀ ɪꜱ ᴄᴏᴍᴘʟᴇᴛᴇʟʏ ᴜᴘ-ᴛᴏ-ᴅᴀᴛᴇ🦁*",
+            "NEW_UPDATE": "𝖭𝖾𝗐 𝗎𝗉𝖽𝖺𝗍𝖾 𝖠𝗏𝖺𝗂𝗅𝖺𝖻𝗅𝖾 😋\n\n 𝖴𝗌𝖾 .update now 𝖿𝗈𝗋 𝗎𝗉𝖽𝖺𝗍𝖾 \n\n *𝖠𝗌𝗄 𝗌𝗎𝗉𝗉𝗈𝗋𝗍 𝗀𝗋𝗈𝗎𝗉 𝖻𝖾𝖿𝗈𝗋𝖾 𝗎𝗉𝖽𝖺𝗍𝗂𝗇𝗀 🐦* \n *https://chat.whatsapp.com/JXwRmc2lKT4IwauZnprpX5* \n\n 𝖴𝗉𝖽𝖺𝗍𝖾𝗌 𝖺𝗋𝖾 : \n\n ",
+            "UPDATING": "ᴜᴘᴅᴀᴛɪɴɢ...",
             "INVALID_HEROKU": "*❌ Your Heroku information is wrong!*",
             "UPDATED": "*✅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴜᴘᴅᴀᴛᴇᴅ!*",
             "UPDATED_LOCAL": "*✅ Successfully Updated!*",
-            "AFTER_UPDATE": "*💬 Sophia ʀᴇꜱᴛᴀʀᴛɪɴɢ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ!*",
+            "AFTER_UPDATE": "*ᴢᴀʀᴀᴍᴡᴏʟ ʀᴇꜱᴛᴀʀᴛɪɴɢ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ!*",
             "IN_AF": "*Please check* ```HEROKU_APP_NAME``` *and* ```app name``` *They must be same.*\n*If these two values ​​are the same, please restore* ```HEROKU_API_KEY```\n\n_To access these settings, use Heroku >> App >> Settings >> Reavel Config Vars_\n_To renew your API key, follow these steps, Heroku >> Account >> API Key then replace old api key in config vars._"
         },
         "whois": {
