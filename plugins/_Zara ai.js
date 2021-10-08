@@ -267,7 +267,7 @@ Raashii.tozara({ pattern: 'chatbot ?(.*)', desc: fulleva_dsc, fromMe: true,dontA
         else {
             await heroku.patch(baseURI + '/config-vars', { 
                 body: { 
-                    ['TALKING_ZARA']: 'true'
+                    ['ZARA_AI']: 'true'
                 } 
             });
             await message.client.sendMessage(message.jid, '*' + succ_on + '*', MessageType.text)
@@ -280,7 +280,7 @@ Raashii.tozara({ pattern: 'chatbot ?(.*)', desc: fulleva_dsc, fromMe: true,dontA
         else {
             await heroku.patch(baseURI + '/config-vars', { 
                 body: { 
-                    ['TALKING_ZARA']: 'false'
+                    ['ZARA_AI']: 'false'
                 } 
             });
             await message.client.sendMessage(message.jid, '*' + succ_off + '*', MessageType.text)
