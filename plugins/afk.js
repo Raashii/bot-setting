@@ -7,7 +7,7 @@ WhatsAsena - Yusuf Usta
 Developer & Co-Founder - Phaticusthiccy
 */
 
-const Sophia = require('../events');
+const Rashi = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const Config = require('../config');
 
@@ -33,7 +33,7 @@ function secondsToHms(d) {
     return hDisplay + mDisplay + sDisplay; 
 }
 
-Sophia.tosophia({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
+Rashi.tozara({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
     if (Config.AFKMSG == 'default') {
 
         if (AFK.isAfk && ((!message.jid.includes('-')) || (message.jid.includes('-') && 
@@ -85,7 +85,7 @@ Sophia.tosophia({on: 'text', fromMe: false, deleteCommand: false}, (async (messa
     }
 }));
 
-Sophia.tosophia({on: 'text', fromMe: true, deleteCommand: false}, (async (message, match) => {
+Rashi.tozara({on: 'text', fromMe: true, deleteCommand: false}, (async (message, match) => {
     if (AFK.isAfk && !message.id.startsWith('3EB0')) {
         AFK.lastseen = 0;
         AFK.reason = false;
@@ -95,7 +95,7 @@ Sophia.tosophia({on: 'text', fromMe: true, deleteCommand: false}, (async (messag
     }
 }));
 
-Sophia.tosophia({pattern: 'afk ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false, desc: Lang.AFK_DESC}, (async (message, match) => {     
+Rashi.tozara({pattern: 'afk ?(.*)', fromMe: true, dontAddCommandList: true, deleteCommand: false, desc: Lang.AFK_DESC}, (async (message, match) => {     
     if (!AFK.isAfk) {
         AFK.lastseen = Math.round((new Date()).getTime() / 1000);
         if (match[1] !== '') { AFK.reason = match[1]; }
@@ -106,4 +106,4 @@ Sophia.tosophia({pattern: 'afk ?(.*)', fromMe: true, dontAddCommandList: true, d
 }));
 
 module.exports = { secondsToHms };
- Sophia
+ Zara
