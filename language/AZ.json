@@ -5,7 +5,7 @@
     "AUTHOR": "AsenaDev",
     "STRINGS": {
         "_asena": {
-            "COMMAND": "Əmr",
+            "COMMAND": "cmnd",
             "DESC": "Açığlama",
             "EXAMPLE": "Nümunə",
             "NOT_FOUND": "*Belə bir əmr tapa bilmədim*",
