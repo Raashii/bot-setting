@@ -5,7 +5,7 @@ PINKY V2
 */
 
 const {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
-const Rashi  = require('../events');
+const Rashi = require('../events');
 const Config = require('../config');
 
 const Language = require('../language');
