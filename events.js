@@ -41,6 +41,6 @@ function tosophia(info, func) {
 }
 
 module.exports = {
-    tosophia: tosophia,
+    tozara: tozara,
     commands: Commands
 }
