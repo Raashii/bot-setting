@@ -2,7 +2,7 @@
 */
 
 const {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
-const Sophia = require('../events');
+const Rashi = require('../events');
 const Config = require('../config');
 
 const Language = require('../language');
@@ -27,7 +27,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 }
 if (Config.WORKTYPE == 'admin') {
     
-Sophia.tosophia({pattern: 'ban ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
+Rashi.tozara({pattern: 'ban ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN ,MessageType.text ,{quoted: message.data });
@@ -67,7 +67,7 @@ Sophia.tosophia({pattern: 'ban ?(.*)', fromMe: false, dontAddCommandList: true, 
     }
 }));
 
-Sophia.tosophia({pattern: 'add(?: |$)(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.ADD_DESC}, (async (message, match) => {  
+Rashi.tozara({pattern: 'add(?: |$)(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.ADD_DESC}, (async (message, match) => {  
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
@@ -103,7 +103,7 @@ Sophia.tosophia({pattern: 'add(?: |$)(.*)', fromMe: false, dontAddCommandList: t
     }
 }));
 
-Sophia.tosophia({pattern: 'promote ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.PROMOTE_DESC}, (async (message, match) => {    
+Rashi.tozara({pattern: 'promote ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.PROMOTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
@@ -163,7 +163,7 @@ Sophia.tosophia({pattern: 'promote ?(.*)', fromMe: false, dontAddCommandList: tr
     }
 }));
 
-Sophia.tosophia({pattern: 'demote ?(.*)', fromMe: false, onlyGroup: true, desc: Lang.DEMOTE_DESC, dontAddCommandList: true}, (async (message, match) => {    
+Rashi.tozara({pattern: 'demote ?(.*)', fromMe: false, onlyGroup: true, desc: Lang.DEMOTE_DESC, dontAddCommandList: true}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN ,MessageType.text ,{quoted: message.data });
@@ -195,7 +195,7 @@ Sophia.tosophia({pattern: 'demote ?(.*)', fromMe: false, onlyGroup: true, desc: 
     }
 }));
 
-Sophia.tosophia({pattern: 'mute ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
+Rashi.tozara({pattern: 'mute ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN ,MessageType.text ,{quoted: message.data });
@@ -1553,7 +1553,7 @@ Sophia.tosophia({pattern: 'mute ?(.*)', fromMe: false, dontAddCommandList: true,
     }
 }));
 
-Sophia.tosophia({pattern: 'unmute ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
+Rashi.tozara({pattern: 'unmute ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
@@ -1569,7 +1569,7 @@ Sophia.tosophia({pattern: 'unmute ?(.*)', fromMe: false, dontAddCommandList: tru
     }
 }));
 
-Sophia.tosophia({pattern: 'invite ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.INVITE_DESC}, (async (message, match) => {    
+Rashi.tozara({pattern: 'invite ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.INVITE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
@@ -1578,7 +1578,7 @@ Sophia.tosophia({pattern: 'invite ?(.*)', fromMe: false, dontAddCommandList: tru
     await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
-Sophia.tosophia({pattern: 'rename ?(.*)', onlyGroup: false, fromMe: true, desc:'change group name'}, (async (message, match) => {
+Rashi.tozara({pattern: 'rename ?(.*)', onlyGroup: false, fromMe: true, desc:'change group name'}, (async (message, match) => {
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
