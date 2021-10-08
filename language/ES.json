@@ -6,7 +6,7 @@
     "STRINGS": {
         "_asena": {
             "COMMAND": "Comando",
-            "DESC": "Explicación",
+            "DESC": "Explicación ",
             "EXAMPLE": "Ejemplo",
             "NOT_FOUND": "*¡No pude encontrar tal comando!*",
             "WARN": "Advertencia"
