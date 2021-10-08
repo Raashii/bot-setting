@@ -1,5 +1,5 @@
 build:
   docker:
-      worker: /Sophia/Dockerfile
+      worker: /Zara/Dockerfile
 run:
    worker: npm start
