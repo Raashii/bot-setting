@@ -1,4 +1,4 @@
- /*
+ /* 
 const Sophia = require('../events');
 const { MessageType } = require('@adiwajshing/baileys');
 const { similarity } = require('../similarity')
