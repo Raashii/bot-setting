@@ -8,7 +8,7 @@ Don't use it for illegal purposes.
 
 const thiccysapi = require('textmaker-thiccy'); // Import NPM Package
 
-const Sophia = require('../events');
+const Rashi = require('../events');
 const {MessageType, GroupSettingChange, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
 const fs = require('fs');
 const Config = require('../config')
@@ -32,7 +32,7 @@ if (Config.LANG == 'ES') desc_msg = 'Muestra herramientas de creación de textos
 if (os.userInfo().homedir !== clh.pay) return;
 let wk = Config.WORKTYPE == 'public' ? false : true
 
-Sophia.tosophia({pattern: 'txtit$', fromMe: wk, desc: desc_msg}, (async (message, match) => {
+Rashi.tozara({pattern: 'txtit$', fromMe: wk, desc: desc_msg}, (async (message, match) => {
     var t1 = ''
     var t2 = ''
     var t3 = ''
@@ -163,7 +163,7 @@ Sophia.tosophia({pattern: 'txtit$', fromMe: wk, desc: desc_msg}, (async (message
         command_cmd + '```.glitch``` \n' + desc_cmd + t14 + '_\n' + usage_cmd + '.glitch plk;pinky'
     await message.client.sendMessage(message.jid,msg, MessageType.text, { quoted: message.data })
 }));
-Sophia.tosophia({pattern: 'devil ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'devil ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -182,7 +182,7 @@ Sophia.tosophia({pattern: 'devil ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'bear ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'bear ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -201,7 +201,7 @@ Sophia.tosophia({pattern: 'bear ?(.*)', fromMe: wk, dontAddCommandList: true}, (
           } 
     });
 }));
-Sophia.tosophia({pattern: 'wolf ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'wolf ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -229,7 +229,7 @@ Sophia.tosophia({pattern: 'wolf ?(.*)', fromMe: wk, dontAddCommandList: true}, (
           } 
     });
 }));
-Sophia.tosophia({pattern: 'neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/create-a-futuristic-technology-neon-light-text-effect-1006.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -248,7 +248,7 @@ Sophia.tosophia({pattern: 'neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (
           } 
     });
 }));
-Sophia.tosophia({pattern: '2neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: '2neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/neon-text-effect-online-879.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -267,7 +267,7 @@ Sophia.tosophia({pattern: '2neon ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'light ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'light ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/thunder-text-effect-online-881.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -286,7 +286,7 @@ Sophia.tosophia({pattern: 'light ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'joker ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'joker ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/create-logo-joker-online-934.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -305,7 +305,7 @@ Sophia.tosophia({pattern: 'joker ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'ninja ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'ninja ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -333,7 +333,7 @@ Sophia.tosophia({pattern: 'ninja ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'glitter ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'glitter ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/advanced-glow-text-effect-873.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -352,7 +352,7 @@ Sophia.tosophia({pattern: 'glitter ?(.*)', fromMe: wk, dontAddCommandList: true}
           } 
     });
 }));
-Sophia.tosophia({pattern: 'bokeh ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'bokeh ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/bokeh-text-effect-876.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -371,7 +371,7 @@ Sophia.tosophia({pattern: 'bokeh ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'marvel ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'marvel ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -399,7 +399,7 @@ Sophia.tosophia({pattern: 'marvel ?(.*)', fromMe: wk, dontAddCommandList: true},
           } 
     });
 }));
-Sophia.tosophia({pattern: '2marvel ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: '2marvel ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -427,7 +427,7 @@ Sophia.tosophia({pattern: '2marvel ?(.*)', fromMe: wk, dontAddCommandList: true}
           } 
     });
 }));
-Sophia.tosophia({pattern: 'avengers ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'avengers ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -455,7 +455,7 @@ Sophia.tosophia({pattern: 'avengers ?(.*)', fromMe: wk, dontAddCommandList: true
           } 
     });
 }));
-Sophia.tosophia({pattern: 'glitch ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'glitch ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -483,7 +483,7 @@ Sophia.tosophia({pattern: 'glitch ?(.*)', fromMe: wk, dontAddCommandList: true},
           } 
     });
 }));
-Sophia.tosophia({pattern: 'graf ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'graf ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -511,7 +511,7 @@ Sophia.tosophia({pattern: 'graf ?(.*)', fromMe: wk, dontAddCommandList: true}, (
           } 
     });
 }));
-Sophia.tosophia({pattern: '2graf ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: '2graf ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -539,7 +539,7 @@ Sophia.tosophia({pattern: '2graf ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'lion ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'lion ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -567,7 +567,7 @@ Sophia.tosophia({pattern: 'lion ?(.*)', fromMe: wk, dontAddCommandList: true}, (
           } 
     });
 }));
-Sophia.tosophia({pattern: '3neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: '3neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/neon-text-effect-online-963.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -586,7 +586,7 @@ Sophia.tosophia({pattern: '3neon ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'ice ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'ice ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.textpro("https://textpro.me/ice-cold-text-effect-862.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -605,7 +605,7 @@ Sophia.tosophia({pattern: 'ice ?(.*)', fromMe: wk, dontAddCommandList: true}, (a
           } 
     });
 }));
-Sophia.tosophia({pattern: 'space ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'space ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var topText, bottomText; 
     if (match[1].includes(';')) {
         var split = match[1].split(';');
@@ -633,7 +633,7 @@ Sophia.tosophia({pattern: 'space ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'smoke ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'smoke ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.photooxy("https://photooxy.com/other-design/create-an-easy-smoke-type-effect-390.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -652,7 +652,7 @@ Sophia.tosophia({pattern: 'smoke ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'glow ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'glow ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     var download = async(uri, filename, callback) => {
         await request.head(uri, async(err, res, body) => {    
             await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
@@ -663,7 +663,7 @@ Sophia.tosophia({pattern: 'glow ?(.*)', fromMe: wk, dontAddCommandList: true}, (
         await message.client.sendMessage(message.jid,fs.readFileSync('/root/WhatsAsenaDuplicated/glowttp.jpg'), MessageType.image, { caption: Config.AFN })
     })
 }));
-Sophia.tosophia({pattern: 'fire ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'fire ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.photooxy("https://photooxy.com/logo-and-text-effects/realistic-flaming-text-effect-online-197.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -682,7 +682,7 @@ Sophia.tosophia({pattern: 'fire ?(.*)', fromMe: wk, dontAddCommandList: true}, (
           } 
     });
 }));
-Sophia.tosophia({pattern: 'harry ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'harry ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.photooxy("https://photooxy.com/logo-and-text-effects/create-harry-potter-text-on-horror-background-178.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -701,7 +701,7 @@ Sophia.tosophia({pattern: 'harry ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: '4neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: '4neon ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.photooxy("https://photooxy.com/logo-and-text-effects/illuminated-metallic-effect-177.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -720,7 +720,7 @@ Sophia.tosophia({pattern: '4neon ?(.*)', fromMe: wk, dontAddCommandList: true}, 
           } 
     });
 }));
-Sophia.tosophia({pattern: 'cemetery ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'cemetery ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.photooxy("https://photooxy.com/logo-and-text-effects/text-on-scary-cemetery-gate-172.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -739,7 +739,7 @@ Sophia.tosophia({pattern: 'cemetery ?(.*)', fromMe: wk, dontAddCommandList: true
           } 
     });
 }));
-Sophia.tosophia({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+Rashi.tozara({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     thiccysapi.photooxy("https://photooxy.com/logo-and-text-effects/put-text-on-the-cup-387.html",
         `${match[1]}`
         ).then(async (data) => { 
