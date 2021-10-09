@@ -106,4 +106,3 @@ Rashi.tozara({pattern: 'afk ?(.*)', fromMe: true, dontAddCommandList: true, dele
 }));
 
 module.exports = { secondsToHms };
- Zara
