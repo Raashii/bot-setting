@@ -1,4 +1,4 @@
- const Sophia = require('../events');
+ const Rashi = require('../events');
 const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
 const { MessageType } = require('@adiwajshing/baileys');
@@ -37,7 +37,7 @@ const convertToWav = file => {
 
 if (conf.WORKTYPE == 'private') {
 
-    Sophia.tosophia({ pattern: 'voicy', desc: Lang.USAGE, fromMe: true }, (async (message, match) => {
+    Rashi.tozara({ pattern: 'voicy', desc: Lang.USAGE, fromMe: true }, (async (message, match) => {
 
         try {
             if (message.reply_message) {
@@ -76,7 +76,7 @@ if (conf.WORKTYPE == 'private') {
 }
 if (conf.WORKTYPE == 'public') {
 
-    Sophia.tosophia({ pattern: 'voicy', desc: Lang.USAGE, fromMe: false }, (async (message, match) => {
+    Rashi.tozara({ pattern: 'voicy', desc: Lang.USAGE, fromMe: false }, (async (message, match) => {
 
         try {
             if (message.reply_message) {
