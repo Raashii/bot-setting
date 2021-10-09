@@ -24,3 +24,4 @@ module.exports = {
     language: json,
     getString: getString
 }
+
