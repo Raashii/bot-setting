@@ -9,7 +9,7 @@
     "stack": "container",
     "env": {
         "ZARA_SESSION": {
-            "description": "Qr.Js ile oluşturduğunuz özel session kodu. Type here yours SOPHIA Session.",
+            "description": "Qr.Js ile oluşturduğunuz özel session kodu. Type here yours ZARA Session.",
             "required": true
         },
         "SUDO": {
