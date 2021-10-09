@@ -8,7 +8,7 @@ WhatsAsena - Yusuf Usta
 
 const simpleGit = require('simple-git');
 const git = simpleGit();
-const Sophia = require('../events');
+const Rashi = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const Config = require('../config');
 const exec = require('child_process').exec;
@@ -20,7 +20,7 @@ const Language = require('../language');
 const Lang = Language.getString('updater');
 
 
-Sophia.tosophia({pattern: 'update$', fromMe: true, dontAddCommandList: true, desc: Lang.UPDATER_DESC}, (async (message, match) => {
+Rashi.tozara({pattern: 'update$', fromMe: true, dontAddCommandList: true, desc: Lang.UPDATER_DESC}, (async (message, match) => {
     await git.fetch();
     var commits = await git.log([Config.BRANCH + '..origin/' + Config.BRANCH]);
     if (commits.total === 0) {
@@ -43,7 +43,7 @@ Sophia.tosophia({pattern: 'update$', fromMe: true, dontAddCommandList: true, des
     }
 }));
 
-Sophia.tosophia({pattern: 'update now$', fromMe: true,dontAddCommandList: true, desc: Lang.UPDATE_NOW_DESC}, (async (message, match) => {
+Rashi.tozara({pattern: 'update now$', fromMe: true,dontAddCommandList: true, desc: Lang.UPDATE_NOW_DESC}, (async (message, match) => {
     await git.fetch();
     var commits = await git.log([Config.BRANCH + '..origin/' + Config.BRANCH]);
     if (commits.total === 0) {
