@@ -4,13 +4,13 @@ you may not use this file except in compliance with the License.
 WhatsAsena - Yusuf Usta
 */
 
-const Sophia = require('../events');
+const Rashi = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const exec = require('child_process').exec;
 const os = require("os");
 const fs = require('fs');
 const Config = require('../config')
-const Pinky = require('../pinky')
+const Pinky = require('../zara')
 const Language = require('../language');
 const Lang = Language.getString('evaluators');
 const SLang = Language.getString('conventer');
@@ -193,7 +193,7 @@ Sophia.tosophia({on: 'text', fromMe: false, deleteCommand: false}, (async (messa
 var alllink_var = ''
 async function afn() {
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
-        AI_var = vars.Z_PINKY_AI
+        AI_var = vars.ZARA_AI
     });
 }
 afn()
@@ -216,7 +216,7 @@ var plk9 = ''
          plk6 = 'ᴍᴏꜱꜱ , ꜱᴀʜᴀʟ , ᴄʜᴇʀʀʏ , ꜰᴀʀʜᴀɴ'
          plk7 = 'ഞാൻ .... ആഹ് ഞാൻ ആരാണെന്ന് എനിക്കറിയില്ല \n ഞാൻ ആരാണെന്ന് നിങ്ങൾക്കറിയാമെങ്കിൽ ദയവായി എന്നോട് പറയു🥺🥺'
          plk8 = ' https://t.me/malayalam_rocker_s \n നിങ്ങൾക്ക് ഇവിടെ ഏത് സിനിമയും കണ്ടെത്താൻ കഴിയുമെന്ന് ഞാൻ കരുതുന്നു'
-         plk9 = ' https://github.com/afnanplk/Pinky '
+         plk9 = ' https://github.com/Jokerser-x-Raashii/Zaramwol '
       }//afnanplk creation
     else {
         plk1 = 'ᴛᴏ ɢᴇᴛ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅꜱ ᴛʏᴘᴇ .ʟɪꜱᴛ​'
@@ -227,18 +227,18 @@ var plk9 = ''
         plk6 = 'ᴍᴏꜱꜱ , ꜱᴀʜᴀʟ , ᴄʜᴇʀʀʏ , ꜰᴀʀʜᴀɴ'
         plk7 = 'i am .... aah i dont know who i am \n please tell me if you know who i am 🥺🥺'
         plk8 = ' https://t.me/malayalam_rocker_s \n i think you can find any movie here, says amal sir 🤪'
-        plk9 = ' https://github.com/afnanplk/Pinky '
+        plk9 = ' https://github.com/Jokerser-x-Raashii/Zaramwol '
     }  
 
 
-Sophia.tosophia({on: 'text', fromMe: false,onlyGroup: true, deleteCommand: false}, (async (message, match) => {
+Rashi.tozara({on: 'text', fromMe: false,onlyGroup: true, deleteCommand: false}, (async (message, match) => {
    if (AI_var == 'group' && message.jid !== '919562803423-1627735504@g.us') {
     
         let regex1 = new RegExp('command ')
         let regex2 = new RegExp('name ')
         let regex3 = new RegExp('bot ')
-        let regex4 = new RegExp('pinky ')
-        let regex5 = new RegExp('afnanplk ')
+        let regex4 = new RegExp('zara ')
+        let regex5 = new RegExp('rashi ')
         let regex6 = new RegExp('supporters ')
         let regex7 = new RegExp('Who are you ')
         let regex8 = new RegExp('movie ')
@@ -280,7 +280,7 @@ Sophia.tosophia({on: 'text', fromMe: false,onlyGroup: true, deleteCommand: false
 var alllink_var = ''
 async function afn() {
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
-        AI_var = vars.Z_PINKY_AI
+        AI_var = vars.ZARA_AI
     });
 }
 afn()
@@ -303,7 +303,7 @@ var plk9 = ''
          plk6 = 'ᴍᴏꜱꜱ , ꜱᴀʜᴀʟ , ᴄʜᴇʀʀʏ , ꜰᴀʀʜᴀɴ'
          plk7 = 'ഞാൻ .... ആഹ് ഞാൻ ആരാണെന്ന് എനിക്കറിയില്ല \n ഞാൻ ആരാണെന്ന് നിങ്ങൾക്കറിയാമെങ്കിൽ ദയവായി എന്നോട് പറയു🥺🥺'
          plk8 = 'https://t.me/malayalam_rocker_s \n നിങ്ങൾക്ക് ഇവിടെ ഏത് സിനിമയും കണ്ടെത്താൻ കഴിയുമെന്ന് ഞാൻ കരുതുന്നു'
-         plk9 = ' https://github.com/afnanplk/Pinky '
+         plk9 = ' https://github.com/Jokerser-x-Raashii/Zaramwol '
       }//afnanplk creation
     else {
         plk1 = 'ᴛᴏ ɢᴇᴛ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅꜱ ᴛʏᴘᴇ .ʟɪꜱᴛ​'
@@ -314,18 +314,18 @@ var plk9 = ''
         plk6 = 'ᴍᴏꜱꜱ , ꜱᴀʜᴀʟ , ᴄʜᴇʀʀʏ , ꜰᴀʀʜᴀɴ'
         plk7 = 'i am .... aah i dont know who i am \n please tell me if you know who i am 🥺🥺'
         plk8 = ' https://t.me/malayalam_rocker_s \n i think you can find any movie here, says amal sir 🤪'
-        plk9 = ' https://github.com/afnanplk/Pinky '
+        plk9 = ' https://github.com/Jokerser-x-Raashii/Zaramwol '
     }  
 
 
-Sophia.tosophia({on: 'text', fromMe: false,onlyPm:true , deleteCommand: false}, (async (message, match) => {
+Rashi.tozara({on: 'text', fromMe: false,onlyPm:true , deleteCommand: false}, (async (message, match) => {
    if (AI_var == 'pm' && message.jid !== '919562803423-1627735504@g.us') {
     
         let regex1 = new RegExp('command ')
         let regex2 = new RegExp('name ')
         let regex3 = new RegExp('bot ')
-        let regex4 = new RegExp('pinky ')
-        let regex5 = new RegExp('afnanplk ')
+        let regex4 = new RegExp('zara ')
+        let regex5 = new RegExp('rashi ')
         let regex6 = new RegExp('supporters ')
         let regex7 = new RegExp('Who are you ')
         let regex8 = new RegExp('movie ')
@@ -367,7 +367,7 @@ Sophia.tosophia({on: 'text', fromMe: false,onlyPm:true , deleteCommand: false}, 
 var alllink_var = ''
 async function afn() {
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
-        AI_var = vars.Z_PINKY_AI
+        AI_var = vars.ZARA_AI
     });
 }
 afn()
@@ -390,7 +390,7 @@ var plk9 = ''
          plk6 = 'ᴍᴏꜱꜱ , ꜱᴀʜᴀʟ , ᴄʜᴇʀʀʏ , ꜰᴀʀʜᴀɴ'
          plk7 = 'ഞാൻ .... ആഹ് ഞാൻ ആരാണെന്ന് എനിക്കറിയില്ല \n ഞാൻ ആരാണെന്ന് നിങ്ങൾക്കറിയാമെങ്കിൽ ദയവായി എന്നോട് പറയു🥺🥺'
          plk8 = 'https://t.me/malayalam_rocker_s \n നിങ്ങൾക്ക് ഇവിടെ ഏത് സിനിമയും കണ്ടെത്താൻ കഴിയുമെന്ന് ഞാൻ കരുതുന്നു'
-         plk9 = ' https://github.com/afnanplk/Pinky '
+         plk9 = ' https://github.com/Jokerser-x-Raashii/Zaramwol '
       }//afnanplk creation
     else {
         plk1 = 'ᴛᴏ ɢᴇᴛ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅꜱ ᴛʏᴘᴇ .ʟɪꜱᴛ'
@@ -401,7 +401,7 @@ var plk9 = ''
         plk6 = 'ᴍᴏꜱꜱ , ꜱᴀʜᴀʟ , ᴄʜᴇʀʀʏ , ꜰᴀʀʜᴀɴ'
         plk7 = 'i am .... aah i dont know who i am \n please tell me if you know who i am 🥺🥺'
         plk8 = ' https://t.me/malayalam_rocker_s \n i think you can find any movie here, says amal sir 🤪'
-        plk9 = ' https://github.com/afnanplk/Pinky '
+        plk9 = ' https://github.com/Jokerser-x-Raashii/Zaramwol '
     }  
 
 
@@ -411,8 +411,8 @@ Sophia.tosophia({on: 'text', fromMe: false, deleteCommand: false}, (async (messa
         let regex1 = new RegExp('command ')
         let regex2 = new RegExp('name ')
         let regex3 = new RegExp('bot ')
-        let regex4 = new RegExp('pinky ')
-        let regex5 = new RegExp('afnanplk ')
+        let regex4 = new RegExp('zara ')
+        let regex5 = new RegExp('rashi ')
         let regex6 = new RegExp('supporters ')
         let regex7 = new RegExp('Who are you ')
         let regex8 = new RegExp('movie ')
