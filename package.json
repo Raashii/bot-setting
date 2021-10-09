@@ -1,8 +1,8 @@
 {
-  "name": "Zara Mwol",
+  "name": "Pinky",
   "version": "7.3.6",
-  "description": "Zara is the Modified Version of WhatsAsena.",
-  "main": "./bot-setting/bot.js",
+  "description": "Pinky is the Modified Version of WhatsAsena.",
+  "main": "./Pinky_V2/bot.js",
   "scripts": {
     "start": "supervisor -s bot.js"
   },
