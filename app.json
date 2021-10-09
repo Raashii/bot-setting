@@ -80,7 +80,7 @@
             "required": true,
             "value": "^[.!;#/]"
         },
-        "Z_PINKY_AI": {
+        "ZARA_AI": {
             "description": "turn on chat back auto reply Zara (use true to on and fale to off)",
             "required": true,
             "value": "true"
