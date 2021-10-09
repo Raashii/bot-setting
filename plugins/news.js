@@ -4,14 +4,14 @@ you may not use this file except in compliance with the License.
 WhatsAsenaDuplicated
 */
 
-const MyPnky = require('../events');
+const Rashi = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const got = require('got');
 
 const Language = require('../language');
 const Lang = Language.getString('weather');
 
-MyPnky.tosophia({pattern: 'news ?(.*)', fromMe: false, desc: Lang.NEWS_DESC}, async (message, match) => {
+Rashi.tozara({pattern: 'news ?(.*)', fromMe: false, desc: Lang.NEWS_DESC}, async (message, match) => {
 	if (match[1] === '') return await message.reply(Lang.NEED_CATEGORY);
 	const url = `https://inshortsapi.vercel.app/news?category=${match[1]}`;
 	try {
