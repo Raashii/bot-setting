@@ -6,7 +6,7 @@ PINKY V2
 var config = require('./config');
 var Commands = [];
 
-function tosophia(info, func) {
+function tozara(info, func) {
     // Basit bir fonksiyon, komut eklemek için.
     var types = ['photo', 'image', 'text', 'message'];
 
