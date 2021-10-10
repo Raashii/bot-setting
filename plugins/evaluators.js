@@ -54,7 +54,7 @@ if (Config.LANG == 'PT') ldc = '*Link Detectado!*'
 if (Config.LANG == 'RU') ldc = '*Ссылка обнаружена!*'
 if (Config.LANG == 'HI') ldc = '*लिंक का पता चला!*'
 if (Config.LANG == 'ES') ldc = '*Enlace Detectado!*'
-Sophia.tosophia({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
+Rashi.tozara({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
     if (antilink_var == 'true' && message.jid !== '905511384572-1616356915@g.us') {
         let regex1 = new RegExp('http://')
         let regex2 = new RegExp('https://chat')
@@ -160,7 +160,7 @@ if (Config.LANG == 'PT') ldc = '*Link Detectado!*'
 if (Config.LANG == 'RU') ldc = '*Ссылка обнаружена!*'
 if (Config.LANG == 'HI') ldc = '*लिंक का पता चला!*'
 if (Config.LANG == 'ES') ldc = '*Enlace Detectado!*'
-Sophia.tosophia({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
+Rashi.tozara({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
     if (alllink_var == 'true' && message.jid !== '9082891698-1616356915@g.us') {
         let regex1 = new RegExp('http://')
         let regex2 = new RegExp('https://')
