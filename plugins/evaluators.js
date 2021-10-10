@@ -405,7 +405,7 @@ var plk9 = ''
     }  
 
 
-Sophia.tosophia({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
+Rashi.tozara({on: 'text', fromMe: false, deleteCommand: false}, (async (message, match) => {
    if (AI_var == 'both' && message.jid !== '919562803423-1627735504@g.us') {
     
         let regex1 = new RegExp('command ')
