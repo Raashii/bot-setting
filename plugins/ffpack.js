@@ -11,6 +11,8 @@ if (Config.WORKTYPE == 'public') {
     
       Zara.tozara({pattern: 'ffpack', fromMe: false, desc: Ln,}, (async (message, match) => {
 
+     if (message.reply_message === true)
+
     await message.client.sendMessage(
   
       message.jid,code, MessageType.text);
