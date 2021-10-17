@@ -7,32 +7,29 @@
  const ffmpeg = require('fluent-ffmpeg');
  const { execFile } = require('child_process');
  const Config = require('../config');
- const zara = require('../zara');
- 
- //forwarded from
- 
+
           var mode = ''
 if (Config.PLK == 'default') mode = 'ᴅᴇᴠᴇʟᴏᴘᴇʀ : ʀᴀᴀsʜɪɪ'
 
 else mode = 'ғᴏʀᴡᴀʀᴅᴇᴅ ʙʏ ' + Config.PLK
 
-//quoted
+            const raashi = {
 
-const pever = {
-                  key: {participant: "0@s.whatsapp.net", ...(message.jid ? { remoteJid: "0@s.whatsapp.net" } : {})},message: { "orderMessage": { "itemCount" : '2021', "status": '1', "surface": '1', "message": mode, "orderTitle": 'ZaraMwol', "thumbnail": fs.readFileSync('./media/image/logo.jpg'), "sellerJid": '0@s.whatsapp.net'}}}
+                  key: {"fromMe": false,"participant": "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "62895619083555-1616169743@g.us","inviteCode": "mememteeeekkeke","groupName": "ZARA MWOL", "caption": mode , 'jpegThumbnail': fs.readFileSync('./media/image/logo.jpg')}}
              
+             
+            }
 
 Rashi.tozara({pattern: 'mforward ?(.*)', fromMe: true, desc: 'its foraward replied audio'}, (async (message, match) => {    
     if (message.reply_message === false);
     
     if(message.reply_message.video ||
       message.reply_message.sticker ||
-      message.reply_message.image ||
       message.reply_message.pdf
     )
       return message.sendMessage("*Not supported!*\n\n   only support audio files🌚");
       
-        if (match == "") return await message.sendMessage("*Give me a jid*\nExample .mforward jid");
+        if (match == "") return await message.sendMessage("*Give me a jid*\nExample .mforward jid1 jid2 jid3 jid4 ...");
        
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -46,6 +43,6 @@ let id = match[1];
         .format('mp3')
         .save('output.mp3')
         .on('end', async () => {
-            await message.client.sendMessage(id, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true, quoted: pever});
+            await message.client.sendMessage(id, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true, quoted: raashi});
 });
 }));
