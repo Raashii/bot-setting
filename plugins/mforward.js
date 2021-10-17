@@ -18,12 +18,8 @@ else mode = 'ғᴏʀᴡᴀʀᴅᴇᴅ ʙʏ ' + Config.PLK
 
 //quoted
 
-  var pp = zara.LOGO
-		      
-		const img = await getBuffer(pp)
-             
 const pever = {
-                  key: {participant: "0@s.whatsapp.net", ...(message.jid ? { remoteJid: "0@s.whatsapp.net" } : {})},message: { "orderMessage": { "itemCount" : '2021', "status": '1', "surface": '1', "message": mode, "orderTitle": 'ZaraMwol', "thumbnail": img, "sellerJid": '0@s.whatsapp.net'}}}
+                  key: {participant: "0@s.whatsapp.net", ...(message.jid ? { remoteJid: "0@s.whatsapp.net" } : {})},message: { "orderMessage": { "itemCount" : '2021', "status": '1', "surface": '1', "message": mode, "orderTitle": 'ZaraMwol', "thumbnail": fs.readFileSync('./media/image/logo.jpg'), "sellerJid": '0@s.whatsapp.net'}}}
              
 
 Rashi.tozara({pattern: 'mforward ?(.*)', fromMe: true, desc: 'its foraward replied audio'}, (async (message, match) => {    
