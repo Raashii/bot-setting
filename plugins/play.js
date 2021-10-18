@@ -28,6 +28,6 @@ Asena.tozara({pattern: 'play ?(.*)', fromMe: wk, desc: 'play song' , dontAddComm
         msg +=  `TOTAL VIEWS :${result.views}\n\n`
         msg +=  `DOWNLOADING LINK :${result.url}\n\n`
         msg += '```'
-         return await message.client.sendMessage(message.jid,Buffer.from(img.data), MessageType.image, {Mimetype: Mimetype.jpg , caption: msg })
+         return await message.client.sendMessage(message.jid,Buffer.from(img.data), MessageType.image, {mimetype: Mimetype.jpg , caption: msg })
         });
     
