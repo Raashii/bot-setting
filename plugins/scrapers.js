@@ -382,17 +382,7 @@ if (config.WORKTYPE == 'private') {
             });
     }));
     
-    Rashi.tozara({pattern: 'number', fromMe: false, desc: Lang.NUMBER}, (async (message, match) => {
-
-            const p_lk = 'BEGIN:VCARD\n'
-            + 'VERSION:3.0\n' 
-            + 'FN:' + Pinky.OA_NAME + '\n' //created afnanplk, please copy this with credit..
-            + 'ORG:pinky julie fam;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=' + Pinky.PHONE + ':' + Pinky.PHONE + ' \n'
-            + 'END:VCARD'
-await message.client.sendMessage(message.jid, {displayname: "PINKY", vcard: p_lk}, MessageType.contact);
-
-  }));    
+    
 
     Rashi.tozara({pattern: 'video ?(.*)', fromMe: true, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
 
@@ -826,7 +816,9 @@ else if (config.WORKTYPE == 'public') {
             voice: LANG
         });
         await message.client.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio,quoted: message.data,  ptt: true});
-   DOWN Rashi.tozara({ pattern: 'play ?(.*)', fromMe: false, desc: 'it send song'}, (async (message, match) => {
+   }));
+
+ Rashi.tozara({ pattern: 'play ?(.*)', fromMe: false, desc: 'it send song'}, (async (message, match) => {
 
   if (match[1] === '') return await message.client.sendMessage(message.jid, 'NEED WORD 🍁', MessageType.text, { quoted: message.data });
   let arama = await yts(match[1]);
@@ -1068,17 +1060,7 @@ else if (config.WORKTYPE == 'public') {
           )
       },
     )
-      Rashi.tozara({pattern: 'number', fromMe: false, desc: Lang.NUMBER}, (async (message, match) => {
-
-            const p_lk = 'BEGIN:VCARD\n'
-            + 'VERSION:3.0\n' 
-            + 'FN:' + Pinky.OA_NAME + '\n' //created afnanplk, please copy this with credit..
-            + 'ORG:pinky julie fam;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=' + Pinky.PHONE + ':' + Pinky.PHONE + ' \n'
-            + 'END:VCARD'
-await message.client.sendMessage(message.jid, {displayname: "PINKY", vcard: p_lk}, MessageType.contact);
-
-  }));    
+      
 
     Rashi.tozara({pattern: 'lyric ?(.*)', fromMe: false, desc: Slang.LY_DESC }, (async (message, match) => {
 
