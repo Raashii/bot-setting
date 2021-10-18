@@ -4,6 +4,7 @@ const got = require('got');
 const Config = require('../config');
 const LOAD_ING = "*ᴜᴘʟᴏᴀᴅɪɴɢ...*"
 const axios = require('axios')
+const Axios = require('axios')
 
 const conf = require('../config');
 let wk = conf.WORKTYPE == 'public' ? false : true
