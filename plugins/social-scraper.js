@@ -15,7 +15,7 @@ const fs = require('fs');
 const Language = require('../language');
 const Lang = Language.getString('instagram')
 const { errorMessage, infoMessage } = require('../helpers')
-
+const snd = require('../zara');
 const cn = require('../config');
 const vf = "Confirmed Account"
 const novf = "Unconfirmed Account"
