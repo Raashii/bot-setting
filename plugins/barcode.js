@@ -4,6 +4,7 @@ const fs = require('fs');
 const axios = require('axios');
 const Config = require('../config');
 const need = "*type some word after command🥲*"
+const conf = require('../config');
 let wk = conf.WORKTYPE == 'public' ? false : true
 
     kannappi.tozara({ pattern: 'barcode ?(.*)', fromMe: wk,dontAddCommandList: true }, (async (message, match) => {
