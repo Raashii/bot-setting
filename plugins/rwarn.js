@@ -7,7 +7,7 @@ const Config = require('../config');
 
 
 if (Config.WORKTYPE == 'private') {
-asena.addCommand({pattern: 'reset warn', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
+asena.tozara({pattern: 'reset warn', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -23,7 +23,7 @@ asena.addCommand({pattern: 'reset warn', fromMe: true, deleteCommand: true, desc
     }));
 
 
-asena.addCommand({pattern: 'reset warn', fromMe: true, deleteCommand: true, desc: GN,}, (async (message, match) => {
+asena.tozara({pattern: 'reset warn', fromMe: true, deleteCommand: true, desc: GN,}, (async (message, match) => {
 
         var r_text = new Array ();
     
@@ -43,7 +43,7 @@ asena.addCommand({pattern: 'reset warn', fromMe: true, deleteCommand: true, desc
     
 
     if (Config.WORKTYPE == 'public') {
-asena.addCommand({pattern: 'reset warn', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
+asena.tozara({pattern: 'reset warn', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
 
     var r_text = new Array ();
 
