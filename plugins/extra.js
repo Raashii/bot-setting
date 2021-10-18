@@ -61,20 +61,7 @@ if (config.WORKTYPE == 'private') {
 	  }
   });
 
-    Rashi.tozara({pattern: 'happymod ?(.*)', fromMe: true, desc: Lang.HMODD_DESC, dontAddCommandList: true }, async (message, match) => {
-	  if (match[1] === '') return await message.reply(Lang.NEED_APPNAME);
-	  const url = `https://api.zeks.xyz/api/happymod?apikey=&q=${match[1]}&apikey=1hroZ3ju94h0PBjCNKsfhYaSuLs`;
-	  try {
-		  const response = await got(url);
-		  const json = JSON.parse(response.body);
-		  if (response.statusCode === 200) return await message.client.sendMessage(message.jid, 
-		  '*📕 ' + Lang.NAMEY +'* ```' + json.result[0].title + '```\n\n' + 
-		  '*📘 ' + Lang.SIZE +'* ```' + json.result[0].size + '```\n\n\n' + 
-		  '*📗 ' + Lang.DOWNLOAD +':* ```' + json.result[0].link + '```\n', MessageType.text);
-	  } catch {
-		  return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDMD, MessageType.text);
-	  }
-  });
+    
 
     Rashi.tozara({pattern: 'insult ?(.*)', fromMe: true, desc: Lang.EVINS_DESC}, async (message, match) => {
 	  if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
@@ -130,11 +117,11 @@ if (config.WORKTYPE == 'private') {
 
     Rashi.tozara({pattern: 'zara ?(.*)', fromMe: true, desc: Lang.BOT_DESC}, async (message, match) => {
 	if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
-	const url = `https://api.simsimi.net/v1/?text=${match[1]}&lang=en&cf=true`;
+	const url = `https://api.simsimi.net/v2/?text=${match[1]}&lang=en&cf=true`;
 	try {
 		const response = await got(url);
 		const json = JSON.parse(response.body);
-	  if (response.statusCode === 200) return await message.client.sendMessage(message.jid, ' \n\n*mwolus* 💗' + Lang.BOT +' ```' + json.messages[0].response + '```\n\n' , MessageType.text,{quoted: message.data});
+	  if (response.statusCode === 200) return await message.client.sendMessage(message.jid, ' \n\n*ZaraMwol* 💗' + Lang.BOT +' ```' + json.messages[0].response + '```\n\n' , MessageType.text,{quoted: message.data});
 	} catch {
 		return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
 	}
@@ -210,20 +197,7 @@ else if (config.WORKTYPE == 'public') {
 	  }
   });
 
-    Rashi.tozara({pattern: 'happymod ?(.*)', fromMe: false, desc: Lang.HMODD_DESC, dontAddCommandList: true }, async (message, match) => {
-	  if (match[1] === '') return await message.reply(Lang.NEED_APPNAME);
-	  const url = `https://api.zeks.xyz/api/happymod?apikey=&q=${match[1]}&apikey=1hroZ3ju94h0PBjCNKsfhYaSuLs`;
-	  try {
-		  const response = await got(url);
-		  const json = JSON.parse(response.body);
-		  if (response.statusCode === 200) return await message.client.sendMessage(message.jid, 
-		  '*📕 ' + Lang.NAMEY +'* ```' + json.result[0].title + '```\n\n' + 
-		  '*📘 ' + Lang.SIZE +'* ```' + json.result[0].size + '```\n\n\n' + 
-		  '*📗 ' + Lang.DOWNLOAD +':* ```' + json.result[0].link + '```\n', MessageType.text);
-	  } catch {
-		  return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDMD, MessageType.text);
-	  }
-  });
+    
 
     Rashi.tozara({pattern: 'insult ?(.*)', fromMe: false, desc: Lang.EVINS_DESC}, async (message, match) => {
 	  if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
@@ -279,11 +253,11 @@ else if (config.WORKTYPE == 'public') {
 
     Rashi.tozara({pattern: 'zara ?(.*)', fromMe: false, desc: Lang.BOT_DESC}, async (message, match) => {
 	if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
-	const url = `https://api.simsimi.net/v1/?text=${match[1]}&lang=en&cf=true`;
+	const url = `https://api.simsimi.net/v2/?text=${match[1]}&lang=en&cf=true`;
 	try {
 		const response = await got(url);
 		const json = JSON.parse(response.body);
-	  if (response.statusCode === 200) return await message.client.sendMessage(message.jid, ' \n\n*Mwolus* 💗' + Lang.BOT +' ```' + json.messages[0].response + '```\n\n' , MessageType.text,{quoted: message.data});
+	  if (response.statusCode === 200) return await message.client.sendMessage(message.jid, ' \n\n*ZaraMwol* 💗' + Lang.BOT +' ```' + json.messages[0].response + '```\n\n' , MessageType.text,{quoted: message.data});
 	} catch {
 		return await message.client.sendMessage(message.jid, Lang.NOT_FOUNDAC, MessageType.text);
 	}
