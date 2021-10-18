@@ -193,7 +193,7 @@ Rashi.tozara({on: 'text', fromMe: false, deleteCommand: false}, (async (message,
 var alllink_var = ''
 async function afn() {
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
-        AI_var = vars.ZARA_AI
+        AI_var = vars.TALKING_ZARA
     });
 }
 afn()
@@ -280,7 +280,7 @@ Rashi.tozara({on: 'text', fromMe: false,onlyGroup: true, deleteCommand: false}, 
 var alllink_var = ''
 async function afn() {
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
-        AI_var = vars.ZARA_AI
+        AI_var = vars.TALKING_ZARA
     });
 }
 afn()
@@ -367,7 +367,7 @@ Rashi.tozara({on: 'text', fromMe: false,onlyPm:true , deleteCommand: false}, (as
 var alllink_var = ''
 async function afn() {
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
-        AI_var = vars.ZARA_AI
+        AI_var = vars.TALKING_ZARA
     });
 }
 afn()
