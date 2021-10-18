@@ -74,7 +74,12 @@
             "description": "reply for .owner ! give your details, Use => default, to change back.",
             "required": false,
             "value": "Raashii"
-        },    
+        },   
+        "TALKING_ZARA": {
+            "description": "turn on chat back auto reply Zara (use 'both' to on and 'false' to off and only for groups use 'group' & only for pm use 'pm')",
+            "required": true,
+            "value": "false"
+        },
         "HANDLERS": {
             "description": "Komutlar için. For commands.",
             "required": true,
