@@ -32,7 +32,7 @@ var LANG = {
 };
 Rashi.tozara({pattern: 'install ?(.*)', fromMe: true, desc: Lang.INSTALL_DESC, warn: Lang.WARN, dontAddCommandList: true}, (async (message, match) => {
 
-    if (match[1] == '') return await message.client.sendMessage(message.jid,Lang.NEED_URL + '.install https://gist.github.com/phaticusthiccy/4232b1c8c4734e1f06c3d991149c6fbd', MessageType.text)
+    if (match[1] == '') return await message.client.sendMessage(message.jid,Lang.NEED_URL + '.install https://gist.github.com/Raashii/test.js', MessageType.text)
     try {
         var url = new URL(match[1]);
     } catch {
@@ -101,7 +101,7 @@ Rashi.tozara({pattern: 'install ?(.*)', fromMe: true, desc: Lang.INSTALL_DESC, w
                 await message.client.sendMessage(message.jid,LANG.limit + DEG.level + '_', MessageType.text)
                 fs.unlinkSync('/root/WhatsAsenaDuplicated/plugins/' + plugin_name + '.js')
             }
-             if (!match[1].includes('afnanplk') && DEG.level > 99) {
+             if (!match[1].includes('Raashii') && DEG.level > 99) {
                 await message.client.sendMessage(message.jid,LANG.limit + DEG.level + '_', MessageType.text)
                 fs.unlinkSync('/root/WhatsAsenaDuplicated/plugins/' + plugin_name + '.js')
             }
@@ -112,7 +112,7 @@ Rashi.tozara({pattern: 'install ?(.*)', fromMe: true, desc: Lang.INSTALL_DESC, w
                 await new Promise(r => setTimeout(r, 400))
                 await message.client.sendMessage(message.jid, LANG.unaffinfo + DEG.level + '_', MessageType.text)
             }
-            else if (!match[1].includes('afnanplk') && DEG.level < 100) {
+            else if (!match[1].includes('Raashii') && DEG.level < 100) {
                 await Db.installPlugin(url, plugin_name)
                 await new Promise(r => setTimeout(r, 400))
                 await message.client.sendMessage(message.jid, Lang.UNOFF, MessageType.text)
@@ -137,7 +137,7 @@ Rashi.tozara({pattern: 'plugin$', fromMe: true, dontAddCommandList: true, desc: 
         plugins.map(
             (plugin) => {
                 let vf = plugin.dataValues.url.includes('phaticusthiccy') ? msg : unmsg
-                mesaj += '```' + plugin.dataValues.name + '```: ' + plugin.dataValues.url + '\n' + vf + '\n\n';
+                mesaj += '```' + plugin.dataValues.name + '```: ' + plugin.dataValues.url + '\n';
             }
         );
         return await message.client.sendMessage(message.jid, mesaj, MessageType.text);
