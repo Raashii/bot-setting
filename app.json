@@ -138,7 +138,7 @@
          "BOT_DESCRIPTION": {
             "description": "description for .help,.list,.menu command reply",
             "required": false,
-            "value": "💥 𝗣𝗘𝗩𝗘𝗥 𝗜𝗦 𝗣𝗘𝗩𝗘𝗥 💥"
+            "value": "💥 𝐏𝐄𝐖𝐄𝐑 𝐈𝐒 𝐏𝐄𝐖𝐄𝐑 💥"
         },      
         "HEROKU_API_KEY": {
             "description": "Herokuda API Keyiniz. Heroku API Key.",
