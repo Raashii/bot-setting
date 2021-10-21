@@ -8,7 +8,7 @@ const Config = require('../config');
 const axios = require('axios');
 const IG_DESC = "Downloads Image/Video From Instagram"
 
-Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: false, desc: IG_DESC }, async (message, match) => {
+Asena.tozara({ pattern: 'insta ?(.*)', fromMe: false, desc: IG_DESC }, async (message, match) => {
     //if(match[1] == '') return
     let { data, status, type } = await instaGram(match[1], 'f3eaf19231f6201c');
     if (!status) return await message.sendMessage('not found')
