@@ -14,22 +14,22 @@ let wk = conf.WORKTYPE == 'public' ? false : true
 
 Asena.tozara({pattern: 'ytv ?(.*)', fromMe: wk, desc: 'video downloading links from youtube'}, async (message, match) => {
 	
-        const {data} = await axios(`http://fxc7-api.herokuapp.com/api/download/playmp4?query=${match[1]}&apikey=XFUM7eRxDQ`)
+        const {data} = await axios(`https://api.zeks.me/api/ytplaymp4?apikey=ApiKannappi&q=${match[1]}`)
 	
         const { status, result } = data
 
-	var img = await Axios.get(`${result.link}`, {responseType: 'arraybuffer'})
+	var img = await Axios.get(`${result.thumbnail}`, {responseType: 'arraybuffer'})
 
         if(!status) return await message.sendMessage('*NO RESULT FOUND🥲*')
 	
         await message.client.sendMessage(message.jid, LOAD_ING , MessageType.text, { quoted: message.data });
         let msg = '```'
         msg +=  `TITLE :${result.title}\n\n`
-        msg +=  `THUMBNAIL :${result.thumb}\n\n`
-        msg +=  `CHANNEL :${result.channel}\n\n`
-        msg +=  `PUBLISHED :${result.publish}\n\n`
-        msg +=  `VIEWS :${result.views}\n\n`
+        msg +=  `THUMBNAIL :${result.thumbnail}\n\n`
+        msg +=  `SOURCE :${result.source}\n\n`
+        msg +=  `SIZE :${result.size}\n\n`
+        msg +=  `DOWNLOADING LINK :${result.url_video}\n\n`
         msg += '```'
-         return await message.client.sendMessage(message.jid,Buffer.from(img.data), MessageType.video, {mimetype: Mimetype.mp4 , caption: msg })
+         return await message.client.sendMessage(message.jid,Buffer.from(img.data), MessageType.image, {mimetype: Mimetype.jpg , caption: msg })
         });
     
