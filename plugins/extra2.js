@@ -133,7 +133,7 @@ Hisham.tozara({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (
         await message.sendMessage("𝖡𝗈𝗍 𝗇𝖺𝗆𝖾 𝖼𝗁𝖺𝗇𝗀𝖾𝖽 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 ✅")
     }));
 
-    Asena.tozara({ pattern: 'logourl ?(.*)', fromMe: true, desc: 'change your bot logo', usage: '.botname *name* ' }, (async (message, match) => {
+    Asena.tozara({ pattern: 'botlogo ?(.*)', fromMe: true, desc: 'change your bot logo', usage: '.botname *name* ' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('𝗉𝗅𝖾𝖺𝗌𝖾 𝖾𝗇𝗍𝖾𝗋 𝗅𝗂𝗇𝗄 🥴')
         await heroku.patch(baseURI + '/config-vars', {
             body: {
