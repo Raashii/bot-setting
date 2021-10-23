@@ -13,8 +13,6 @@ const Config = require('../config');
 
 const Asena = require('../events');
 
-const fs = require('fs');
-
 let wk = Config.WORKTYPE == 'public' ? false : true
 
 const err = "╭────────────────╮ \n              *ᴛʀᴏʟʟ ᴘᴀᴄᴋ* \n╰────────────────╯\n                *ᴇxᴀᴍᴘʟᴇ*\n╭──────────────── \n│  ɪᴋᴋᴀ ᴛʀᴏʟʟ;ᴘᴀᴄᴋ \n│   ▢ ᴛʀᴏʟʟ=ᴛᴏᴘ \n│   ▢ ᴘᴀᴄᴋ=ʙᴏᴛᴛᴏᴍ \n╰────────────────╯"
