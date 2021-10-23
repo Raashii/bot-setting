@@ -84,7 +84,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+     return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -108,7 +108,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -132,7 +132,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -156,7 +156,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -180,7 +180,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -204,7 +204,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -228,7 +228,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -252,7 +252,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -276,7 +276,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -300,7 +300,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -324,7 +324,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -348,7 +348,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -372,7 +372,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -396,7 +396,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
@@ -420,7 +420,7 @@ const Ln = "▷🤖നിങ്ങൾ ആഗ്രഹിക്കുന്ന �
 }
     else {
       
-      await message.client.sendMessage(
+       return await message.client.sendMessage(
       message.jid,err, MessageType.text);
           }
     
