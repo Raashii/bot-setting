@@ -272,7 +272,7 @@ Asena.tozara({pattern: 'spooky ?(.*)', fromMe: wk, dontAddCommandList: true }, a
 	
         const { status, result } = data
 
-	var img = await axios.get(result, {responseType: 'arraybuffer'})
+	var img = await axios.get(`${result}`, {responseType: 'arraybuffer'})
 
        
          return await message.client.sendMessage(message.jid,Buffer.from(img.data), MessageType.image, {mimetype: Mimetype.jpg})
