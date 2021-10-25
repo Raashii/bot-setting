@@ -33,16 +33,10 @@ Rashi.tozara({pattern: 'join', fromMe: true, dontAddCommandList: true}, (async (
   
   if (match[1] === '') return await message.client.sendMessage(message.jid, why);
   
-   if (match[1].includes('https://chat.whatsapp.com/')) {
      
   let id = match[1];
   
  await message.client.acceptInvite(id);
  
-   }
-   
-   else {
-     
-     return await message.client.sendMessage(message.jid, why);
-   }
+  
 }))
