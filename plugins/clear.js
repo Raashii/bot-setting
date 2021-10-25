@@ -1,8 +1,7 @@
- /* Copyright (C) 2020 afnanplk.
+ /* Copyright (C) 2020 Raashii.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 */
-
 
 const {MessageType, GroupSettingChange, ChatModification, WAConnectionTest} = require('@adiwajshing/baileys');
 const Rashi = require('../events');
@@ -12,6 +11,7 @@ const Language = require('../language');
 const Lang = Language.getString('admin');
 const mut = Language.getString('mute');
 const END = "clear all messages"
+const why = "```Sry this is not a valid format```\n\n```format:```\n```.join https://chat.whatsapp.com/xxx```"
 
 async function checkImAdmin(message, user = message.client.user.jid) {
     var grup = await message.client.groupMetadata(message.jid);
@@ -27,3 +27,22 @@ Rashi.tozara({pattern: 'clear', fromMe: true, desc: END, dontAddCommandList: tru
     await message.client.modifyChat (message.jid, ChatModification.delete);
     await message.sendMessage('```🏳 Chat cleared 🏳```');
 }));
+
+
+Rashi.tozara({pattern: 'join', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+  
+  if (match[1] === '') return await message.client.sendMessage(message.jid, why);
+  
+   if (match[1].includes('https://chat.whatsapp.com/')) {
+     
+  let id = match[1];
+  
+ await message.client.acceptInvite(id);
+ 
+   }
+   
+   else {
+     
+     return await message.client.sendMessage(message.jid, why);
+   }
+}))
