@@ -1,6 +1,5 @@
 /* Copyright (C) 2020 Yusuf Usta.
-RECODDED BY AFNANPPLK
-Plk  
+RECODDED BY RAASHII 
 */
 
 const os = require("os");
@@ -159,7 +158,14 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                     var pinkjson = await conn.groupMetadata(msg.key.remoteJid)
                 await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => {
                 await conn.sendMessage(msg.key.remoteJid, res.data, MessageType.image, {thumbnail: fs.readFileSync('./media/image/bye.jpg'), caption:  gb.message.replace('{pp}', '').replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{owner}', conn.user.name) }); });                           
-            } else if (gb.message.includes('{gif}')) {
+        } else if (gb.message.includes('{gp}')) {
+                let gp
+                try { gp = await conn.getProfilePicture(msg.key.remoteJid); } catch { gp = await conn.getProfilePicture(); }
+                    var rashijson = await conn.groupMetadata(msg.key.remoteJid)
+                await axios.get(gp, {responseType: 'arraybuffer'}).then(async (res) => {
+                    //created by Raashii
+                await conn.sendMessage(msg.key.remoteJid, res.data, MessageType.image, {thumbnail: fs.readFileSync('./media/image/bye.jpg'), caption:  gb.message.replace('{gp}', '').replace('{gphead}', rashijson.subject).replace('{gpmaker}', rashijson.owner).replace('{gpdesc}', rashijson.desc).replace('{owner}', conn.user.name) }); });
+   } else if (gb.message.includes('{gif}')) {
                 //created by afnanplk
                     var plkpinky = await axios.get(config.GIF_BYE, { responseType: 'arraybuffer' })
                     var pinkjson = await conn.groupMetadata(msg.key.remoteJid)
@@ -180,7 +186,14 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                 await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => {
                     //created by afnanplk
                 await conn.sendMessage(msg.key.remoteJid, res.data, MessageType.image, {thumbnail: fs.readFileSync('./media/image/wel.jpg'), caption:  gb.message.replace('{pp}', '').replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{owner}', conn.user.name) }); });                           
-            } else if (gb.message.includes('{gif}')) {
+           } else if (gb.message.includes('{gp}')) {
+                let gp
+                try { gp = await conn.getProfilePicture(msg.key.remoteJid); } catch { gp = await conn.getProfilePicture(); }
+                    var rashijson = await conn.groupMetadata(msg.key.remoteJid)
+                await axios.get(gp, {responseType: 'arraybuffer'}).then(async (res) => {
+                    //created by Raashii
+                await conn.sendMessage(msg.key.remoteJid, res.data, MessageType.image, {thumbnail: fs.readFileSync('./media/image/wel.jpg'), caption:  gb.message.replace('{gp}', '').replace('{gphead}', rashijson.subject).replace('{gpmaker}', rashijson.owner).replace('{gpdesc}', rashijson.desc).replace('{owner}', conn.user.name) }); });
+} else if (gb.message.includes('{gif}')) {
                 var plkpinky = await axios.get(config.WEL_GIF, { responseType: 'arraybuffer' })
                 var pinkjson = await conn.groupMetadata(msg.key.remoteJid)
                 await conn.sendMessage(msg.key.remoteJid, Buffer.from(plkpinky.data), MessageType.video, {thumbnail: fs.readFileSync('./media/image/wel.jpg'), mimetype: Mimetype.gif, caption: gb.message.replace('{gif}', '').replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{owner}', conn.user.name) });
