@@ -21,6 +21,11 @@
             "required": true,
             "value": "en"
         },
+        "AUTO_BİO": {
+            "description": "Duruma otomatik tarih ve zaman eklemek için true yapın. Set true for auto date, time in biography.",
+            "required": true,
+            "value": "false"
+        },
         "WEL_GIF": {
             "description": "Fill here any gif link if you selected gif as WEELCOME",
             "required": false,
