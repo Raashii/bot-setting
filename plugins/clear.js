@@ -11,7 +11,6 @@ const Language = require('../language');
 const Lang = Language.getString('admin');
 const mut = Language.getString('mute');
 const END = "clear all messages"
-const why = "```Sry this is not a valid format```\n\n```format:```\n```.join https://chat.whatsapp.com/xxx```"
 
 async function checkImAdmin(message, user = message.client.user.jid) {
     var grup = await message.client.groupMetadata(message.jid);
@@ -29,14 +28,4 @@ Rashi.tozara({pattern: 'clear', fromMe: true, desc: END, dontAddCommandList: tru
 }));
 
 
-Rashi.tozara({pattern: 'join', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
-  
-  if (match[1] === '') return await message.client.sendMessage(message.jid, why);
-  
-     
-  let id = match[1];
-  
- await message.client.acceptInvite(id);
- 
-  
-}))
+
