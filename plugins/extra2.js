@@ -142,3 +142,17 @@ Hisham.tozara({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (
         });
         await message.sendMessage("𝖡𝗈𝗍 𝗅𝗈𝗀𝗈 𝖼𝗁𝖺𝗇𝗀𝖾𝖽 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 ✅")
     }));
+
+Asena.tozara({pattern: 'join', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+
+var json = await message.client.groupMetadataMinimal(message.jid)
+
+  if (match[1] === '') return await message.client.sendMessage(message.jid, why);
+  
+     
+  let id = match[1];
+  
+ await message.client.acceptInvite(id);
+ 
+  
+}))
