@@ -2,18 +2,30 @@
 RECODDED BY RAASHII 
 */
 
-const os = require("os");
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
 const events = require("./events");
 const chalk = require('chalk');
 const config = require('./config');
-const {WAConnection, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
-const {Message, StringSession, Image, Video} = require('./Zara/');
+const axios = require('axios');
+const Heroku = require('heroku-client');
+const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
+const {Message, StringSession, Image, Video} = require('./whatsasena/');
 const { DataTypes } = require('sequelize');
 const { GreetingsDB, getMessage } = require("./plugins/sql/greetings");
 const got = require('got');
-const axios = require('axios');
+const simpleGit = require('simple-git');
+const git = simpleGit();
+const crypto = require('crypto');
+const nw = '```Blacklist Defected!```'
+const heroku = new Heroku({
+    token: config.HEROKU.API_KEY
+});
+let baseURI = '/apps/' + config.HEROKU.APP_NAME;
+const Language = require('./language');
+const Lang = Language.getString('updater');
+
 
 // Sql
 const WhatsAsenaDB = config.DATABASE.define('WhatsAsena', {
@@ -56,6 +68,30 @@ Array.prototype.remove = function() {
     }
     return this;
 };
+
+var biography_var = ''
+    await heroku.get(baseURI + '/config-vars').then(async (vars) => {
+        biography_var = vars.AUTO_BİO
+    });
+
+    setInterval(async () => { 
+        if (biography_var == 'true') {
+            if (conn.user.jid.startsWith('90')) { // Turkey
+                var ov_time = new Date().toLocaleString('LK', { timeZone: 'Europe/Istanbul' }).split(' ')[1]
+                const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
+                const biography = '📅 ' + utch + '\n⌚ ' + ov_time + '\n\n🐺 WhatsAsena'
+                await conn.setStatus(biography)
+            }
+            else {
+                const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
+                var ov_time = new Date().toLocaleString('EN', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
+                const biography = '📅 ' + utch + '\n\n⌚ ' + ov_time 
+                await conn.setStatus(biography)
+            }
+        }
+})
 
 async function whatsAsena () {
     await config.DATABASE.sync();
