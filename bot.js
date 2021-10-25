@@ -69,9 +69,9 @@ Array.prototype.remove = function() {
     return this;
 };
 
-
+var zara_bio = `${config.AUTOBİO}`
     setInterval(async () => { 
-        if (config.AUTOBİO == 'true') {
+        if (zara_bio == 'true') {
             if (conn.user.jid.startsWith('90')) { // Turkey
                 var ov_time = new Date().toLocaleString('LK', { timeZone: 'Europe/Istanbul' }).split(' ')[1]
                 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
