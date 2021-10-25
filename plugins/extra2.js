@@ -145,7 +145,7 @@ Hisham.tozara({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (
 
 Asena.tozara({pattern: 'join', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
-var json = await message.client.groupMetadataMinimal(message.jid)
+const why = "```Sry this is not a valid format```\n\n```format:```\n```.join https://chat.whatsapp.com/xxx```"
 
   if (match[1] === '') return await message.client.sendMessage(message.jid, why);
   
@@ -155,4 +155,13 @@ var json = await message.client.groupMetadataMinimal(message.jid)
  await message.client.acceptInvite(id);
  
   
+}))
+
+Asena.tozara({pattern: 'jid', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+
+var json = await message.client.groupMetadataMinimal(message.jid)
+
+  if (message.jid.includes('-')) { await message.client.sendMessage(message.jid, "```Group jid:```" + `${json.id}` );
+ }
+
 }))
