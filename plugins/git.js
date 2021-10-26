@@ -12,7 +12,7 @@ Asena.tozara({pattern: 'git', fromMe: wk, desc: 'its send git links'}, (async (m
     var rashi = await axios.get(config.LOGO, { responseType: 'arraybuffer' })
 
 
-    await message.sendMessage(Buffer(rashi.data), MessageType.image, {quoted: message.data , mimetype: Mimetype.png, caption: `╭──────────────────╮
+    await message.sendMessage(Buffer.from(rashi.data), MessageType.image, {quoted: message.data , mimetype: Mimetype.png, caption: `╭──────────────────╮
 │      
  |          *◩ 𝙶𝙸𝚃 𝙻𝙸𝙽𝙺𝚂 ◪*
  |          
