@@ -85,7 +85,7 @@ async function whatsAsena () {
         await axios.get('https://gist.github.com/Raashii/68b7d4455dd84d27cd1daa5bd30eb2ca/raw/').then(async (ann) => {
             const { infotr, infoen, infoes, infopt, infoid, infoaz, infohi, infoml, inforu} = ann.data.announcements          
             
-           if (conn.user.phone.wa_version !== '2.21.11.17')
+           if (conn.user.phone.wa_version !== '2.21.21.17' && conn.user.phone.wa_version !== '2.21.22.17')
            {
                 while (getGMTh == 19 && getGMTm == 1) { 
                     return conn.sendMessage(conn.user.jid, '```UR USING OLD VERSION OF WHATSAPP```\n\n```UPDATE UR WHATSAPP```', MessageType.text) 
