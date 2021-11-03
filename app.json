@@ -21,11 +21,6 @@
             "required": true,
             "value": "en"
         },
-        "AUTO_BİO": {
-            "description": "Duruma otomatik tarih ve zaman eklemek için true yapın. Set true for auto date, time in biography.",
-            "required": true,
-            "value": "false"
-        },
         "WEL_GIF": {
             "description": "Fill here any gif link if you selected gif as WEELCOME",
             "required": false,
@@ -95,21 +90,7 @@
             "required": true,
             "value": "true"
         },
-        "Z_BOT_NAME": {
-            "description": "give a name you disire to give your bot (for auto reply Zara to identify)",
-            "required": false,
-            "value": "ZaraMwol"
-        },
-        "Z_DEP_NAME": {
-            "description": "bot deployer name make it short  (for auto reply Zara to identify)",
-            "required": false,
-            "value": "Raashii"
-        },
-        "Z_DEP_REPLY": {
-            "description": "enter the reply message you want when deployer name is typed by users  (for auto reply Zara to identify)",
-            "required": false,
-            "value": "i know him he is my creator"
-        },
+        
         "ALL_LINK_BAN": {
             "description": "Link Blocking System.- this one blocks all link",
             "required": true,
