@@ -24,7 +24,6 @@ Rashi.tozara({pattern: 'sforward ?(.*)', fromMe: true, desc: 'its foraward repli
     if (message.reply_message === false);
     
     if(message.reply_message.video ||
-      message.reply_message.sticker ||
       message.reply_message.pdf
     )
       return message.sendMessage("*Not supported!*\n\n   only support sticker files🌚");
