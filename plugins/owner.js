@@ -9,10 +9,11 @@ let wk = conf.WORKTYPE == 'public' ? false : true
 
 Asena.tozara({ pattern: 'own', fromMe: wk, desc: 'its send owner details' }, (async (message, match) => {
 
-  var ppUrl = await conn.getProfilePicture();
-
-  const ras = await Axios.get(ppUrl, { responseType: 'arraybuffer' })
-
+  let ppUrl
+                try { ppUrl = await conn.getProfilePicture(); } catch { ppUrl = await message.client.getProfilePicture(message.jid.includes('-') ? message.data.participant : message.jid ); }
+ 
+            const ras = await axios.get(ppUrl, {responseType: 'arraybuffer'})
+           
 
   await message.sendMessage(Buffer.from(ras.data), MessageType.image, { quoted: message.data, mimetype: Mimetype.png, caption:`╭────────────────╮
    *ʏᴇs ɪᴍ ᴛʜᴇ ᴏᴡɴᴇʀ ᴏғ ᴛʜɪs ʙᴏᴛ*
