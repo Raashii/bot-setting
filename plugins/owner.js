@@ -3,7 +3,7 @@ const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys'
 const axios = require('axios');
 const config = require('../config');
 const fs = require("fs")
-const config = require('../zara');
+const zara = require('../zara');
 const conf = require('../config');
 let wk = conf.WORKTYPE == 'public' ? false : true
 
