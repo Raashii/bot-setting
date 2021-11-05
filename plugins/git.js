@@ -9,10 +9,12 @@ let wk = conf.WORKTYPE == 'public' ? false : true
 
 Asena.tozara({pattern: 'git', fromMe: wk, desc: 'its send git links'}, (async (message, match) => {
 
-    var rashi = await axios.get(config.LOGO, { responseType: 'arraybuffer' })
+    var ppUrl = await conn.getProfilePicture();
+        
+            const ras = await Axios.get(ppUrl, {responseType: 'arraybuffer'})
+            
 
-
-    await message.sendMessage(Buffer.from(rashi.data), MessageType.image, {quoted: message.data , mimetype: Mimetype.png, caption: `╭──────────────────╮
+    await message.sendMessage(Buffer.from(ras.data), MessageType.image, {quoted: message.data , mimetype: Mimetype.png, caption: `╭──────────────────╮
 │      
  |          *◩ 𝙶𝙸𝚃 𝙻𝙸𝙽𝙺𝚂 ◪*
  |          
