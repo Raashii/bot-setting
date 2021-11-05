@@ -7,7 +7,7 @@ const config = require('../zara');
 const conf = require('../config');
 let wk = conf.WORKTYPE == 'public' ? false : true
 
-Asena.tozara({ pattern: 'git', fromMe: wk, desc: 'its send git links' }, (async (message, match) => {
+Asena.tozara({ pattern: 'own', fromMe: wk, desc: 'its send owner details' }, (async (message, match) => {
 
   var ppUrl = await conn.getProfilePicture();
 
