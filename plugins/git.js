@@ -9,8 +9,9 @@ let wk = conf.WORKTYPE == 'public' ? false : true
 
 Asena.tozara({pattern: 'git', fromMe: wk, desc: 'its send git links'}, (async (message, match) => {
 
-    var ppUrl = await conn.getProfilePicture();
-        
+      let ppUrl
+                try { ppUrl = await conn.getProfilePicture(); } catch { ppUrl = await message.client.getProfilePicture(message.jid.includes('-') ? message.data.participant : message.jid ); }
+ 
             const ras = await Axios.get(ppUrl, {responseType: 'arraybuffer'})
             
 
