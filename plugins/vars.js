@@ -292,7 +292,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
                     } 
                 });
                 await message.sendMessage(STR_ON)
-        } else if (match[1] == 'true') {
+        } else if (match[1] == 'off') {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 
                         ['STICKER_REPLY']: 'false'
