@@ -4,6 +4,7 @@
 const Asena = require('../events');
 const { MessageType } = require('@adiwajshing/baileys');
 const Config = require('../config');
+const Zara = require('../zara');
 
 Asena.tozara({ pattern: 'brdmore ?(.*)', fromMe: false, desc: 'add readmore before your text' }, (async (message, match) => {
 
@@ -18,10 +19,21 @@ Asena.tozara({ pattern: 'rdmore ?(.*)', fromMe: false, desc: 'add readmore befor
 }));
 
 
-Asena.tozara({ pattern: 'jid ?(.*)', fromMe: true }, (async (message, match) => {
-
-        if (message.reply_message === true) return;
+Asena.tozara({ pattern: 'jid ?(.*)', fromMe: false }, (async (message, match) => {
+if (message.reply_message === true) return await message.client.sendMessage(message.jid,'🙂', MessageType.text);
 
   await message.client.sendMessage(message.jid, '```JID: ' + message.jid + '```', MessageType.text);
+
+}));
+
+Asena.tozara({ pattern: 'owner ?(.*)', fromMe: false }, (async (message, match) => {
+
+  await message.client.sendMessage(message.jid, Zara.OWN, MessageType.text, { quoted: message.data });
+
+}));
+
+Asena.tozara({ pattern: 'git ?(.*)', fromMe: false }, (async (message, match) => {
+
+  await message.client.sendMessage(message.jid, "```https://github.com/Jokerser-x-Raashii/Zaramwol```", MessageType.text, { quoted: message.data });
 
 }));
