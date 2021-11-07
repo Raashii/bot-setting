@@ -20,7 +20,7 @@ Asena.tozara({ pattern: 'rdmore ?(.*)', fromMe: false, desc: 'add readmore befor
 
 Asena.tozara({ pattern: 'jid ?(.*)', fromMe: true }, (async (message, match) => {
 
-if (message.reply_message === true);
+        if (message.reply_message === true) return;
 
   await message.client.sendMessage(message.jid, '```JID: ' + message.jid + '```', MessageType.text);
 
