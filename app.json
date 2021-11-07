@@ -71,7 +71,7 @@
             "value": "false"
         },        
         "OWNER_NAME": {
-            "description": "reply for .owner ! give your details, Use => default, to change back.",
+            "description": "enter ur name, this name will show on some commands",
             "required": false,
             "value": "Raashii"
         },   
@@ -172,6 +172,11 @@
         "REMOVE_BG_API_KEY": {
             "description": "Fotoğrafların arkaplanını kaldırır. https://remove.bg",
             "required": false
+        },
+        "OWNER_MESSAGE": {
+            "description": "Customizable Owner Message!",
+            "required": false,
+            "value": "*Hehey I am ZaraMwol Powered By Raashii*"
         },
         "ALIVE_MESSAGE": {
             "description": "Customizable Alive Message! Use => default, to change back.",
