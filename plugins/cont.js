@@ -27,7 +27,7 @@ else if (config.WORKTYPE == 'public') {
 
 Rashi.tozara({pattern: 'number', fromMe: false, desc: 'Its send owner number'}, (async (message, match) => {
          var mode = ''
-if (Config.OA_NAME == 'Raashii') mode = 'ᴅᴇᴠᴇʟᴏᴘᴇʀ : '
+if (config.PLK == 'Raashii') mode = 'ᴅᴇᴠᴇʟᴏᴘᴇʀ : '
 
 else mode = 'ᴏᴡɴᴇʀ : '
             
