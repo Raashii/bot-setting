@@ -133,7 +133,7 @@ Hisham.tozara({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (
         await message.sendMessage("𝖡𝗈𝗍 𝗇𝖺𝗆𝖾 𝖼𝗁𝖺𝗇𝗀𝖾𝖽 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 ✅")
     }));
 
-Asena.tozara({ pattern: 'callblock ?(.*)', fromMe: true, desc: 'change mode off call block', usage: '.botname *name* ' }, (async (message, match) => {
+Asena.tozara({ pattern: 'callblock ?(.*)', fromMe: true, desc: 'change mode off call block', usage: '.callblock *on/off* ' }, (async (message, match) => {
         if (match[1] == '') return await message.sendMessage('𝖤𝗇𝗍𝖾𝗋 𝖸𝗈𝗎𝗋 on/off 𝖺𝖿𝗍𝖾𝗋 𝖼𝗈𝗆𝗆𝖺𝗇𝖽')
         await heroku.patch(baseURI + '/config-vars', {
             body: {
