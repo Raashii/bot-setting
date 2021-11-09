@@ -43,7 +43,7 @@ module.exports = {
     NOLOG: process.env.NO_LOG === undefined ? 'false' : process.env.NO_LOG,
     STICKERP: process.env.STICKER_REPLY === undefined ? false : convertToBool(process.env.STICKER_REPLY),
     BGMFILTER: process.env.BGM_FILTER === undefined ? false : convertToBool(process.env.BGM_FILTER),
-    DISBGM: process.env.DISABLE_JID_BGM_FILTER === undefined ? false : process.env.DISABLE_JID_BGM_FILTER,
+    DISBGM: process.env.DISABLE_JID_BGM_FILTER === undefined ? '994409073695-1627712839@g.us' : process.env.DISABLE_JID_BGM_FILTER,
     BLOCKMSG: process.env.BLOCK_MESSAGE === undefined ? 'default' : process.env.BLOCK_MESSAGE,
     UNBLOCKMSG: process.env.UNBLOCK_MESSAGE === undefined ? 'default' : process.env.UNBLOCK_MESSAGE,
     UNMUTEMSG: process.env.UNMUTE_MESSAGE === undefined ? 'default' : process.env.UNMUTE_MESSAGE,
