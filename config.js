@@ -26,7 +26,7 @@ module.exports = {
     ALL_LINK_BAN: process.env.ALL_LINK_BAN === undefined ? 'false' : process.env.ALL_LINK_BAN,
     PM_BLOCK: process.env.PM_BLOCK === undefined ? 'false' : process.env.PM_BLOCK,
     ZARA_AI: process.env.ZARA_AI === undefined ? 'false' : process.env.ZARA_AI,
-    TALKING_ZARA: process.env.TALKING_ZARA === undefined ? 'false' : process.env.TALKING_ZARA,
+    CALLB: process.env.CALL_BLOCK === undefined ? 'false' : process.env.CALL_BLOCK,
     PLK: process.env.OWNER_NAME === undefined ? 'default' : process.env.OWNER_NAME,
     GANSTYLE: process.env.GAN_IMAGE === undefined ? 'https://i.hizliresim.com/loUtAb.jpg' : process.env.GAN_IMAGE,
     LANG: process.env.LANGUAGE === undefined ? 'TR' : process.env.LANGUAGE.toUpperCase(),
