@@ -60,6 +60,11 @@
             "required": true,
             "value": "false"
         },
+         "CALL_BLOCK": {
+            "description": "will block members if they call on voice/video, if true ",
+            "required": true,
+            "value": "true"
+        },
          "THERI_LIST_GP": {
             "description": "enter the word you dont allow in your group ",
             "required": true,
