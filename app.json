@@ -21,6 +21,11 @@
             "required": true,
             "value": "en"
         },
+       "LOGO_LINK": {
+            "description": "Fill here any img link if you selected img as BOT LOGO",
+            "required": true,
+            "value": "https://i.imgur.com/rXTFf9l.jpeg"
+        },
         "WEL_GIF": {
             "description": "Fill here any gif link if you selected gif as WEELCOME",
             "required": false,
