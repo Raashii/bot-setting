@@ -256,13 +256,13 @@ else if (config.WORKTYPE == 'public') {
   const tx = " \n\n*Mwolus* 💗 : ```"
   const { data } = await axios(`https://api-sv2.simsimi.net/v2/?text=${match[1]}&lang=en&cf=true`)
 
-  const { success } = data
+
     
   if (match[1] === 'xx') return await message.reply(Lang.NEED_LOCATIONA);
   if (match[1] === 'Hi') return await message.reply(tx + 'Hi i am wa userbot```\n\n');
   if (match[1] === 'hi') return await message.reply(tx + 'Hi i am wa userbot```\n\n');
 
-  await message.client.sendMessage(message.jid, tx + `${success}` + '```\n\n', MessageType.text, { quoted: message.data });
+  await message.client.sendMessage(message.jid, tx + `${data.success}` + '```\n\n', MessageType.text, { quoted: message.data });
   
 });
 
