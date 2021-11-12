@@ -76,7 +76,7 @@ Rashi.tozara({ pattern: 'menu', fromMe: wk, dontAddCommandList: true}, (async (m
     { title: '𝚃𝚁𝙾𝙻𝙻 𝙿𝙰𝙲𝙺', description: ``, rowId: ".logopack2" }
     
        ]
-const desc = `*╭────────────────*\n*┊      ʜᴇʏ ʙʀᴏ* ` + wish +`\n*┊*\n*┊ ɴᴀᴍᴇ :* ` + Config.BOTPLK + `\n*┊ ᴛɪᴍᴇ :* ` + time + `\n*┊ ᴏᴡɴᴇʀ :* ` + Config.PLK + `\n*┊ ᴢᴀʀᴀ ᴀɪ :* ` + eva + `\n*┊ ᴡᴋ ᴛʏᴘᴇ :* ` + Config.WORKTYPE + `\n*┊ ᴀɴᴛɪ ʟɪɴᴋ :* ` + auto_bio + `\n*┊ ʜᴀɴᴅɪʟᴇʀs :* ` + Config.HANDLERS + `\n*┊*\n*┊*   ` + zara.DESC + `\n*┊*\n*╰────────────────*`
+const desc = `*╭────────────────*\n*┊      ʜᴇʏ ʙʀᴏ* ` + wish +`\n*┊*\n*┊ 👾ɴᴀᴍᴇ :* ` + Config.BOTPLK + `\n*┊ ⌚ᴛɪᴍᴇ :* ` + time + `\n*┊ 👨‍💻ᴏᴡɴᴇʀ :* ` + Config.PLK + `\n*┊ 🤖ᴢᴀʀᴀ ᴀɪ :* ` + eva + `\n*┊ 💦ᴡᴋ ᴛʏᴘᴇ :* ` + Config.WORKTYPE + `\n*┊ 🔗ᴀɴᴛɪ ʟɪɴᴋ :* ` + auto_bio + `\n*┊ ⚜️ʜᴀɴᴅɪʟᴇʀs :* ` + Config.HANDLERS + `\n*┊*\n*┊*   ` + zara.DESC + `\n*┊*\n*╰────────────────*`
  
   const sections = [{ title: "  𝒆𝒏𝒋𝒐𝒚 𝒐𝒖𝒓 𝒔𝒆𝒓𝒗𝒊𝒄𝒆", rows: rows }]
 
