@@ -129,12 +129,12 @@
          "BOT_NAME": {
             "description": "heading for .help command reply",
             "required": false,
-            "value": "•━━━╼⤏𝐙𝐚𝐫𝐚 𝐌𝐰𝐨𝐥⤎╾━━━•"
+            "value": "𝚉𝙰𝚁𝙰𝙼𝚆𝙾𝙻"
         },     
          "BOT_DESCRIPTION": {
             "description": "description for .help,.list,.menu command reply",
             "required": false,
-            "value": "💥 𝐏𝐄𝐖𝐄𝐑 𝐈𝐒 𝐏𝐄𝐖𝐄𝐑 💥"
+            "value": "📛 *𝔭𝔢𝔴𝔢𝔯 𝔦𝔰 𝔭𝔢𝔴𝔢𝔯* 📛"
         },      
         "HEROKU_API_KEY": {
             "description": "Herokuda API Keyiniz. Heroku API Key.",
