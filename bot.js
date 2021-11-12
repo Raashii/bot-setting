@@ -4,10 +4,13 @@ RECODDED BY RAASHII
 
 const fs = require("fs");
 const os = require("os");
+const { getBuffer } = require('../func');
 const path = require("path");
 const events = require("./events");
 const chalk = require('chalk');
 const config = require('./config');
+const Config = require('./config');
+const zara = require('../zara');
 const axios = require('axios');
 const Heroku = require('heroku-client');
 const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
