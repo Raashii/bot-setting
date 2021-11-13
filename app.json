@@ -1,5 +1,5 @@
 {
-    "name": "Zara mwol",
+    "name": "ZaraMwol",
     "description": "Zara - re-edited from asena. World’s first UserBot made for WhatsApp, and re-edited by raashii and jokerser",
     "logo": "https://i.ibb.co/9rrnJ7g/20210815-080839.jpg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai"],
@@ -186,7 +186,7 @@
         "OWNER_MESSAGE": {
             "description": "Customizable Owner Message!",
             "required": false,
-            "value": "*Hehey I am ZaraMwol Powered By Raashii*"
+            "value": "*Hehey I am ZaraMwol Powered By Raashii 💖*"
         },
         "ALIVE_MESSAGE": {
             "description": "Customizable Alive Message! Use => default, to change back.",
