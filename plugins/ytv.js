@@ -15,7 +15,7 @@ const Axios = require('axios')
 const conf = require('../config');
 let wk = conf.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({pattern: 'ytv ?(.*)', fromMe: wk, desc: 'video downloading links from youtube'}, async (message, match) => {
+Asena.tozara({pattern: 'ytv ?(.*)', fromMe: wk, desc: 'video downloading links from youtube'}, async (message, match) => {
 
 var reply = await message.client.sendMessage(message.jid, LOAD_ING , MessageType.text, { quoted: message.data });
 	
