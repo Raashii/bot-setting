@@ -26,11 +26,7 @@ if (message.reply_message === true) return await message.client.sendMessage(mess
 
 }));
 
-Asena.tozara({ pattern: 'owner ?(.*)', fromMe: false }, (async (message, match) => {
 
-  await message.client.sendMessage(message.jid, Zara.OWN, MessageType.text, { quoted: message.data });
-
-}));
 
 Asena.tozara({ pattern: 'git ?(.*)', fromMe: false }, (async (message, match) => {
 
