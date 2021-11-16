@@ -48,8 +48,8 @@ Rashi.tozara({pattern: 'install ?(.*)', fromMe: true, desc: Lang.INSTALL_DESC, w
     if (response.statusCode == 200) {
         // Plugin Name
         var plugin_name = response.body.match(/addCommand\({.*pattern: ["'](.*)["'].*}/);
-        if (plugin_name.length >= 1) {
-            plugin_name = "__" + plugin_name[1];
+        if (Config.ZARA_AI === 'true') {
+            plugin_name = "__" + plugin_name;
         } else {
             plugin_name = "__" + Math.random().toString(36).substring(8);
         }
