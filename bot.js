@@ -252,7 +252,17 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
        
             
               return; 
-    }         
+//callblock
+
+    }else if (msg.messageStubType === 40 || msg.messageStubType === 41) {
+  if (config.CALLB == 'true') {
+  
+     await message.client.blockUser(msg.key.remoteJid, "add");
+    
+  }
+  return;
+  }
+
 
 //mention added
 
