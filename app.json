@@ -50,12 +50,18 @@
             "description": "if you need Automatic sticker reply type'true'. Otherwise false",
             "required": false,
             "value": "true"
-        },  
+        }, 
+        "ANTI_FAKE_REMOVE": {
+            "description": "Fake number auto remover (Except Indian numbers)! Give true for activating!",
+            "required": true,
+            "value": "false"
+        },
          "THERI_KICK_GP": {
             "description": "will remove members from group if they use bad words given in THERI_LIST_GP , if true ",
             "required": true,
             "value": "false"
         },
+
         "NUMBER": {
             "description": "give your orginal phone number if you wish to add it in .number cmnd ",
             "required": false
