@@ -161,6 +161,35 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
             await conn.updatePresence(msg.key.remoteJid, Presence.unavailable);
         }
         
+//Auto fake remove
+
+if (msg.messageStubeType === 31 && config.FAKER === 'true') {
+    
+  if (!msg.messageStubParameters[0].startsWith('91') ) {
+  
+  async function checkImAdmin(message, user = conn.user.jid) {
+    var grup = await conn.groupMetadata(msg.key.remoteJid);
+    var sonuc = grup['participants'].map((member) => {
+        
+        if (member.jid.split("@")[0] == user.split("@")[0] && member.isAdmin) return true; else; return false;
+    });
+    
+    return sonuc.includes(true);
+}
+             
+		var iam = await checkImAdmin(conn);
+     if (!iam) {
+       
+		return;
+		
+		}
+		   else {
+			return await conn.groupRemove(msg.key.remoteJid, [msg.messageStubParameters[0]]);
+			}	
+   
+  }
+  return;
+  }
 
 //greeting
 
