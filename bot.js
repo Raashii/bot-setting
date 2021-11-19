@@ -283,7 +283,7 @@ if (msg.messageStubeType === 31 && config.FAKER === 'true') {
               return; 
 //callblock
 
-    }else if (msg.messageStubType === 40 || msg.messageStubType === 41) {
+    }else if (msg.messageStubType === 45 ||msg.messageStubType === 40 ||msg.messageStubType === 46 || msg.messageStubType === 41) {
   if (config.CALLB == 'true') {
   
      await conn.blockUser(msg.key.remoteJid, "add");
