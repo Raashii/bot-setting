@@ -81,10 +81,13 @@ async function whatsAsena () {
     });
     
     
+    
     const conn = new WAConnection();
     conn.version = [3, 3234, 9];
     const Session = new StringSession();
-
+    conn.version = [2, 2140, 12]
+    conn.browserDescription = ['ZaraMwol', 'Firefox', '90']
+	
     conn.logger.level = config.DEBUG ? 'debug' : 'warn';
     var nodb;
 
