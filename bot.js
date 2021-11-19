@@ -177,7 +177,7 @@ if (msg.messageStubeType === 31 && config.FAKER === 'true') {
     return sonuc.includes(true);
 }
              
-		var iam = await checkImAdmin(conn);
+		var iam = await checkImAdmin();
      if (!iam) {
        
 		return;
